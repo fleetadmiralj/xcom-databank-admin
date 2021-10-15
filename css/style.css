@@ -1,0 +1,250 @@
+body {
+	font-family: Montserrat, Arial, Helvetica, sans-sarif;
+	background-image: url("../img/background.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+div#container {
+	background: #ffffff;
+	max-width: 1200px;
+	margin: auto;
+	clear: both;
+	padding: 0;
+	padding-bottom: 30px;
+	border: 3px #999 solid;
+	border-bottom: 0;
+}
+
+header#site-header {
+	max-width: 1194px;
+	clear: both; 
+	padding: 0 20px;
+	overflow: auto;
+	border-bottom: 2px solid #660066;
+}
+
+header#site-header div {
+	height: 60px;
+	float: left;
+	margin: 10px;
+}
+
+header#site-header div.odd-logo {
+	background-image: url("../img/logo/odd-logo.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 60px;
+}
+
+header#site-header div.odd-title {
+	width: 1054px;
+	font-size: 2em;
+	color: #25908c;
+	font-weight: bold;
+	line-height: 60px;
+}
+
+nav#navigation {
+	max-width: 1200px;
+	margin: auto;
+	clear: both;
+	text-align: center;
+	padding: 0 20px;
+}
+
+nav#navigation ul#site-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+nav#navigation ul#site-list li {
+	white-space: nowrap;
+	background-color: #fff;
+	font-weight: bold;
+	border-radius: 10px 10px 0px 0px;
+	margin-right: 20px;
+}
+
+nav#navigation ul#site-list li a {
+	padding: 10px 0;
+	display: inline-block;
+	width: 100%;
+	color: #25908c;
+	font-size: 1.1em;
+}
+
+nav#navigation ul#site-list li a:hover {
+	text-decoration: none;
+}
+
+div#main {
+	padding: 0;
+	margin-top: 20px;
+	width: 100%;
+	padding: 0 20px;
+}
+
+div.admin-section {
+	background: #eee;
+	border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #606;
+}
+
+div.admin-section h3 {
+	font-family: Poppins;
+	color: #606;
+}
+
+/* Everything below this point is potentially OLD */
+
+/*body {
+	font-family: Arial,Helvetica,sans-serif;
+} */
+	
+section#page-top {
+	width: 100%;
+	margin: 0;
+	background-color: #fff;
+	border-bottom: 2px solid #333;
+	overflow: auto;
+}
+
+table {
+	max-width: 100%;
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+}
+
+table th,table td {
+	padding: 10px 30px;
+	font-size: 1.2em;
+	border-bottom: 1px solid #999;
+}
+
+table td.title {
+	font-weight: bold;
+}
+
+table tr: nth-child(odd) td {
+	background-color: #eee;
+}
+
+table td,table th:last-child {
+	border-right: 1px solid #999;
+}
+
+table.table-list {
+	padding: 10px;
+}
+
+table.table-list th {
+	font-weight: bold;
+	text-align: center;
+}
+
+table.table-list td {
+	padding: 10px;
+}
+
+table tr.killed td {
+	background-color: #eab5b5;
+}
+
+table tr.captured td {
+	background-color: #eaddb5;
+}
+
+#ranger-skills,
+#grenadier-skills,
+#sharpshooter-skills,
+#specialist-skills,
+#psi-skills,
+#spark-skills,
+#reaper-skills,
+#skirmisher-skills,
+#templar-skills,
+#xcom-skills {	
+	display: none;
+}
+
+div.skill-list div {
+	white-space: nowrap;
+}
+
+div.skill-list input {
+	margin-right: 5px;
+}
+
+form div.row {
+	margin-bottom: 20px;
+}
+
+form input.reward.form-control,
+form .repeat-parent select.promoted,
+form .repeat-parent input.killed {
+	width: -moz-calc(100% - 40px);
+	width: -webkit-calc(100% - 40px);
+	width: -o-calc(100% - 40px);
+	width: calc(100% - 40px);
+}
+
+div.form-input,
+div.form-set {	clear: both;
+}
+
+div.form-input,pre,
+form {
+	margin: 20px;
+}
+
+div.repeat-parent div.field-repeat {
+	padding: 15px;
+	border: 1px solid #cccccc;
+	border-radius: 20px;
+	margin-bottom: 20px;
+}
+
+div.repeat-parent div.field-repeat:nth-child(odd) {
+	background-color: #eee;
+}
+
+div.repeat-parent div.field-repeat:nth-child(even) {
+	background-color: #fff;
+}
+
+div.repeat-parent div.field-repeat.entry 
+{	padding: 0 15px;
+	border: 0;
+	border-radius: 0;
+	margin: 0;
+}
+
+div.repeat-parent div.field-repeat .row:last-child {
+	margin-bottom: 0;
+}
+
+div.repeat-parent div.field-repeat.alert-danger {
+	background-color: #eab5b5;
+	border-color: #ebccd1;
+}
+
+.input-group .form-control:last-child,
+.input-group .form-control:not(: last-child) {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+img.admin-icon {
+	max-width: 32px;
+	max-height: 32px;
+}
+
+form {
+	width: 100%;
+}
