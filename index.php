@@ -6,37 +6,39 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
 			<div id="main">
 			
+				<h2>Mission Information</h2>
+				<div class="row">
+					<div class="col-4"><strong>Missions</strong></div>
+					<div class="col-8"><a href="/mission/mission-list.php">List</a> | <a href="/mission/mission.php">Add</a></div>
+				</div>
+				<div class="row">
+					<div class="col-4"><strong>Mission Soldiers</strong></div>
+					<div class="col-8"><a href="/soldier/mission-soldiers-list.php">List</a> | <a href="/soldier/mission-soldiers.php">Add</a></div>
+				</div>
+				<div class="row">
+					<div class="col-4"><strong>Mission Aliens</strong></div>
+					<div class="col-8"></div>
+				</div>
+				<div class="row">
+					<div class="col-4"><strong>Mission Types</strong></div>
+					<div class="col-8"><a href="/mission/mission-type-list.php">List</a> | <a href="/mission/mission-type.php">Add</a></div>
+				</div>
+				<div class="row">
+					<div class="col-4"><strong>Mission Objectives</strong></div>
+					<div class="col-8"><a href="/mission/objective-list.php">List</a> | <a href="/mission/objective.php">Add</a></div>
+				</div>
+			
 				<div class="admin-section">
 					<h3>Mission Information</h3>
 					<div class="row">
-						<div class="col-sm-3">
-							<h5>Missions</h5>
-							<p><a href="/mission/mission-list.php">List</a> | <a href="/mission/mission.php">Add</a></p>
-						</div>
 						<div class="col-sm-3">
 							<h5>Create Activity Chain</h5>
 							<p><a href="/mission/chain-list.php">List</a> | <a href="/mission/chain.php">Add</a></p>
 						</div>
 						<!-- <div class="col-sm-4">
-							<h5>Mission Soldiers</h5>
-							<p><a href="/missions/mission-soldiers-list.php">List</a> | <a href="/missions/mission-soldiers.php">Add</a></p>
-						</div> -->
-						<!-- <div class="col-sm-4">
-							<h5>Mission Aliens</h5>
-							<p>List | Add</p>
-						</div>
-						<div class="col-sm-4">
 							<h5>Mission SITREPs</h5>
 							<p>List | Add</p>
 						</div> -->
-						<div class="col-sm-3">
-							<h5>Mission Types</h5>
-							<p><a href="/mission/mission-type-list.php">List</a> | <a href="/mission/mission-type.php">Add</a></p>
-						</div>
-						<div class="col-sm-3">
-							<h5>Mission Objectives</h5>
-							<p><a href="/mission/objective-list.php">List</a> | <a href="/mission/objective.php">Add</a></p>
-						</div>
 					</div>
 				</div>
 				
@@ -50,10 +52,6 @@
 						<div class="col-sm-4">
 							<h5>Bonds</h5>
 							<p><a href="/soldier/bonds-list.php">List</a> | <a href="/soldier/bonds.php">Add</a></p>
-						</div>
-						<div class="col-sm-4">
-							<h5>Mission Soldiers</h5>
-							<p><a href="/soldier/mission-soldiers-list.php">List</a> | <a href="/soldier/mission-soldiers.php">Add</a></p>
 						</div>
 						<!-- <div class="col-sm-4">
 							<h5>Soldier Skills</h5>
