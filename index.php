@@ -5,27 +5,37 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/header-include.php' ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
 			<div id="main">
-			
-				<h2>Mission Information</h2>
 				<div class="row">
-					<div class="col-4"><strong>Missions</strong></div>
-					<div class="col-8"><a href="/mission/mission-list.php">List</a> | <a href="/mission/mission.php">Add</a></div>
-				</div>
-				<div class="row">
-					<div class="col-4"><strong>Mission Soldiers</strong></div>
-					<div class="col-8"><a href="/soldier/mission-soldiers-list.php">List</a> | <a href="/soldier/mission-soldiers.php">Add</a></div>
-				</div>
-				<div class="row">
-					<div class="col-4"><strong>Mission Aliens</strong></div>
-					<div class="col-8"></div>
-				</div>
-				<div class="row">
-					<div class="col-4"><strong>Mission Types</strong></div>
-					<div class="col-8"><a href="/mission/mission-type-list.php">List</a> | <a href="/mission/mission-type.php">Add</a></div>
-				</div>
-				<div class="row">
-					<div class="col-4"><strong>Mission Objectives</strong></div>
-					<div class="col-8"><a href="/mission/objective-list.php">List</a> | <a href="/mission/objective.php">Add</a></div>
+					<div class="col-6 index-section">
+						<h2>Mission Information</h2>
+						<div class="row">
+							<div class="col-4"><strong>Missions</strong></div>
+							<div class="col-2"><a href="/mission/mission-list.php">List</a></div>
+							<div class="col-2"><a href="/mission/mission.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Mission Soldiers</strong></div>
+							<div class="col-2"><a href="/soldier/mission-soldiers-list.php">List</a></div>
+							<div class="col-2"><a href="/soldier/mission-soldiers.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Mission Aliens</strong></div>
+							<div class="col-2"></div>
+							<div class="col-2"></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Mission Types</strong></div>
+							<div class="col-2"><a href="/mission/mission-type-list.php">List</a></div>
+							<div class="col-2"><a href="/mission/mission-type.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Mission Objectives</strong></div>
+							<div class="col-2"><a href="/mission/objective-list.php">List</a></div>
+							<div class="col-2"><a href="/mission/objective.php">Add</a></div>
+						</div>
+					</div>
+					<div class="col-6 index-section">
+					</div>
 				</div>
 			
 				<div class="admin-section">
