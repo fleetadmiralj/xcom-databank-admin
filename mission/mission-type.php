@@ -8,6 +8,7 @@
 	else {
 		if(isset($_GET['id']) and is_numeric($_GET['id'])) {
 			$missionTypeID = $_GET['id'];
+			$missionType = new MissionType;
 			$missionType->getMissionType($missionTypeID);
 		}
 ?>
