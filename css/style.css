@@ -91,7 +91,8 @@ div.index-section {
 	margin-bottom: 2em;
 }
 
-div.index-section h2 {
+div.index-section h2,
+h2.list-header {
 	font-family: Poppins;
 	color: #606;
 	font-weight: bold;
@@ -104,18 +105,25 @@ div.index-section div.row {
 }
 
 /* Page Lists */
-div.admin-table div.row {
+div.mission-list div.row {
 	padding: 0.5em 0;
 	border: 1px solid #999;
 	border-top: 0;
 }
 
 div.admin-table div.row.head-row {
-	padding: 10px 30px;
 	font-size: 1.2em;
 	border: 0;
 	border-bottom: 1px solid #999;
 	font-family: Poppins;
+}
+
+h3.soldier-mission-operation {
+	margin-top: 0.5em;
+}
+
+p.soldier-mission-line {
+	margin: 0;
 }
 
 div.row-red {
