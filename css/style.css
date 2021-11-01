@@ -111,6 +111,34 @@ div.admin-table div.head-row {
 	font-family: Poppins;
 }
 
+div.row-red {
+	background-color: #f5e5e5;
+}
+
+div.row-orange {
+	background-color: #f5f0e5;
+}
+
+div.row-yellow {
+	background-color: #f5f5e5;
+}
+
+div.row-green {
+	background-color: #e5f5e5;
+}
+
+div.row-teal {
+	background-color: #e5f5ed;
+}
+
+div.row-blue {
+	background-color: #e5f5f5;
+}
+
+div.row-purple {
+	background-color: #ede5f5;
+}
+
 /* Everything below this point is potentially OLD */
 
 /*body {
