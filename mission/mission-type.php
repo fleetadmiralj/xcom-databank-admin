@@ -10,7 +10,6 @@
 			$missionTypeID = $_GET['id'];
 			$missionType->getMissionType($missionTypeID);
 		}
-	}		
 ?>
 
 <!DOCTYPE html>
