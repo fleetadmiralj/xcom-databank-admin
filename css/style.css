@@ -87,6 +87,10 @@ div#main {
 }
 
 /* Homepage Styles */
+div.index-section {
+	margin-bottom: 2em;
+}
+
 div.index-section h2 {
 	font-family: Poppins;
 	color: #606;
