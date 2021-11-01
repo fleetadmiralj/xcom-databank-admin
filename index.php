@@ -35,27 +35,6 @@
 						</div>
 					</div>
 					<div class="col-6 index-section">
-						<h2>Soldier Information</h2>
-						<div class="row">
-							<div class="col-4"><strong>Soldiers</strong></div>
-							<div class="col-2"><a href="/soldier/soldier-list.php">List</a></div>
-							<div class="col-2"><a href="/soldier/soldier.php">Add</a></div>
-						</div>
-						<div class="row">
-							<div class="col-4"><strong>Bonds</strong></div>
-							<div class="col-2"><a href="/soldier/bonds-list.php">List</a</div>
-							<div class="col-2"><a href="/soldier/bonds.php">Add</a></div>
-						</div>
-						<div class="row">
-							<div class="col-4"><strong>Soldier Skills</strong></div>
-							<div class="col-2"></div>
-							<div class="col-2"></div>
-						</div>
-					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-6 index-section">
 						<h2>Covert Infiltration</h2>
 						<div class="row">
 							<div class="col-4"><strong>Covert Actions</strong></div>
@@ -79,6 +58,27 @@
 						</div>
 						<div class="row">
 							<div class="col-4"><strong>Activity Chain Type</strong></div>
+							<div class="col-2"></div>
+							<div class="col-2"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-6 index-section">
+						<h2>Soldier Information</h2>
+						<div class="row">
+							<div class="col-4"><strong>Soldiers</strong></div>
+							<div class="col-2"><a href="/soldier/soldier-list.php">List</a></div>
+							<div class="col-2"><a href="/soldier/soldier.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Bonds</strong></div>
+							<div class="col-2"><a href="/soldier/bonds-list.php">List</a></div>
+							<div class="col-2"><a href="/soldier/bonds.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Soldier Skills</strong></div>
 							<div class="col-2"></div>
 							<div class="col-2"></div>
 						</div>
