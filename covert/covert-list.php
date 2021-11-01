@@ -5,7 +5,7 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/header-include.php' ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
 			<div id="main">
-				<h2>List of All Covert Actions</h2>
+				<h2 class="list-header">LList of All Covert Actions</h2>
 				<p><a href="/covert/covert.php">Add new Covert Actions</a></p>
 				<?php listCovert(); ?>
 			</div>
