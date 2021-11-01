@@ -104,9 +104,16 @@ div.index-section div.row {
 }
 
 /* Page Lists */
-div.admin-table div.head-row {
+div.admin-table div.row {
+	padding: 0.5em 0;
+	border: 1px solid #999;
+	border-top: 0;
+}
+
+div.admin-table div.row.head-row {
 	padding: 10px 30px;
 	font-size: 1.2em;
+	border: 0;
 	border-bottom: 1px solid #999;
 	font-family: Poppins;
 }
