@@ -35,100 +35,81 @@
 						</div>
 					</div>
 					<div class="col-6 index-section">
+						<h2>Soldier Information</h2>
+						<div class="row">
+							<div class="col-4"><strong>Soldiers</strong></div>
+							<div class="col-2"><a href="/soldier/soldier-list.php">List</a></div>
+							<div class="col-2"><a href="/soldier/soldier.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Bonds</strong></div>
+							<div class="col-2"><a href="/soldier/bonds-list.php">List</a</div>
+							<div class="col-2"><a href="/soldier/bonds.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Soldier Skills</strong></div>
+							<div class="col-2"></div>
+							<div class="col-2"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-6 index-section">
+						<h2>Covert Infiltration</h2>
+						<div class="row">
+							<div class="col-4"><strong>Covert Actions</strong></div>
+							<div class="col-2"><a href="/covert/covert-list.php">List</a></div>
+							<div class="col-2"><a href="/covert/covert.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Covert Action Operative</strong></div>
+							<div class="col-2"></div>
+							<div class="col-2"></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Covert Action Types</strong></div>
+							<div class="col-2"><a href="/covert/covert-type-list.php">List</a></div>
+							<div class="col-2"><a href="/covert/covert-type.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Activity Chains</strong></div>
+							<div class="col-2"><a href="/mission/chain-list.php">List</a></div>
+							<div class="col-2"><a href="/mission/chain.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Activity Chain Type</strong></div>
+							<div class="col-2"></div>
+							<div class="col-2"></div>
+						</div>
+					</div>
+					<div class="col-6 index-section">
+						<h2>Aliens</h2>
+						<div class="row">
+							<div class="col-4"><strong>Alien Type</strong></div>
+							<div class="col-2"><a href="/aliens/alien-types-list.php">List</a></div>
+							<div class="col-2"><a href="/aliens/alien-types.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Alien Units</strong></div>
+							<div class="col-2"><a href="/aliens/aliens-list.php">List</a></div>
+							<div class="col-2"><a href="/aliens/aliens.php">Add</a></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><strong>Chosen</strong></div>
+							<div class="col-2"><a href="/aliens/chosen-list.php">List</a></div>
+							<div class="col-2"><a href="/aliens/chosen.php">Add</a></div>
+						</div>
 					</div>
 				</div>
 			
 				<div class="admin-section">
 					<h3>Mission Information</h3>
 					<div class="row">
-						<div class="col-sm-3">
-							<h5>Create Activity Chain</h5>
-							<p><a href="/mission/chain-list.php">List</a> | <a href="/mission/chain.php">Add</a></p>
-						</div>
 						<!-- <div class="col-sm-4">
 							<h5>Mission SITREPs</h5>
 							<p>List | Add</p>
 						</div> -->
-					</div>
-				</div>
-				
-				<div class="admin-section">
-					<h3>Soldier Information</h3>
-					<div class="row">
-						<div class="col-sm-4">
-							<h5>Soldier</h5>
-							<p><a href="/soldier/soldier-list.php">List</a> | <a href="/soldier/soldier.php">Add</a></p>
-						</div>
-						<div class="col-sm-4">
-							<h5>Bonds</h5>
-							<p><a href="/soldier/bonds-list.php">List</a> | <a href="/soldier/bonds.php">Add</a></p>
-						</div>
-						<!-- <div class="col-sm-4">
-							<h5>Soldier Skills</h5>
-							<p>List | Add</p>
-						</div> -->
-					</div>
-				</div>
-				
-				<div class="admin-section">
-					<h3>Covert Actions</h3>
-					<div class="row">
-						<div class="col-sm-4">
-							<h5>Covert Actions</h5>
-							<p><a href="/covert/covert-list.php">List</a> | <a href="/covert/covert.php">Add</a></p>
-						</div>
-						<!-- <div class="col-sm-4">
-							<h5>Covert Action Member</h5>
-							<p>List | Add</p>
-						</div> -->
-						<div class="col-sm-4">
-							<h5>Covert Action Types</h5>
-							<p><a href="/covert/covert-type-list.php">List</a> | <a href="/covert/covert-type.php">Add</a></p>
-						</div>
-						<!-- <div class="col-sm-4">
-							<h5>Covert Action Requirements</h5>
-							<p>List | Add</p>
-						</div>
-						<div class="col-sm-4">
-							<h5>Covert Action Status</h5>
-							<p>List | Add</p>
-						</div>
-						<div class="col-sm-4">
-							<h5>Covert Operative Status</h5>
-							<p>List | Add</p>
-						</div> -->
-					</div>
-				</div>
-				
-				<!-- <div class="admin-section">
-					<h3>Activity Chains</h3>
-					<div class="row">
-						<div class="col-sm-4">
-							<h5>Create Activity Chain</h5>
-							<p><a href="/chain/chain-list.php">List</a> | <a href="/chain/chain.php">Add</a></p>
-						</div>
-						<div class="col-sm-4">
-							<h5>Add Activity Chain Step</h5>
-							<p><a href="/chain/chain-step-list.php">List</a> | <a href="/chain/chain-step.php">Add</a></p>
-						</div>
-					</div>
-				</div> -->
-				
-				<div class="admin-section">
-					<h3>Alien Information</h3>
-					<div class="row">
-						<div class="col-sm-4">
-							<h5>Alien Units</h5>
-							<p><a href="/aliens/aliens-list.php">List</a> | <a href="/aliens/aliens.php">Add</a></p>
-						</div>
-						<div class="col-sm-4">
-							<h5>Alien Types</h5>
-							<p><a href="/aliens/alien-types-list.php">List</a> | <a href="/aliens/alien-types.php">Add</a></p>
-						</div>
-						<div class="col-sm-4">
-							<h5>Chosen</h5>
-							<p><a href="/aliens/chosen-list.php">List</a> | <a href="/aliens/chosen.php">Add</a></p>
-						</div>
 					</div>
 				</div>
 				
