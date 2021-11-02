@@ -113,7 +113,7 @@ $(function(){
 		missionType = dataMission;
 	});
 	
-	$(document).on("change", ".mission-type select", function(e) {
+	$(document).on("change", "select.mission-type", function(e) {
 		e.preventDefault();
 		var selection = $(this).find(":selected").val();
 		var objective = missionType[selection];
