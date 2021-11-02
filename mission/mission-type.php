@@ -2,13 +2,13 @@
 <?php
 
 	$errorMsg = "";
+	$missionType = new MissionType();
 	if(!empty($_POST)) {
-		$errorMsg = missionTypeProcess($_POST, '/mission/mission-type-list.php');
+		$errorMsg = $missionType->processForm($_POST, '/mission/mission-type-list.php');
 	}
 	else {
 		if(isset($_GET['id']) and is_numeric($_GET['id'])) {
 			$missionTypeID = $_GET['id'];
-			$missionType = new MissionType;
 			$missionType->getMissionType($missionTypeID);
 		}
 ?>

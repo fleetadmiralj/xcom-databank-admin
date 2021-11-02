@@ -197,7 +197,7 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/header-include.php' ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
 			<div id="main" class="controls input-group">
-				<form action="mission.php" method="post" id="mission-form" enctype="multipart/form-data">
+				<form action="mission.php" method="post" id="mission-form" enctype="multipart/form-data" class="was-validated g-3" novalidate>
 					<?php missionForm($mission); ?>
 					
 					<input type="submit" value="Submit" class="submit"> <input type="reset">
