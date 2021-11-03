@@ -137,14 +137,14 @@ $(function(){
 		var selection = $(this).find(":selected").val();
 		var rank = soldiers[selection];
 		if(selection == "") {
-			$($(this).parents('.row').find('.rank')).empty();
+			$($(this).parents('.mission-info.row').find('.rank')).empty();
 			$("<option />").text("N/A").val("").appendTo($(this).parents('.row').find('.rank'));
-			$($(this).parents('.row').find('.class')).empty();
+			$($(this).parents('.mission-info.row').find('.class')).empty();
 			$("<option />").text("N/A").val("").appendTo($(this).parents('.row').find('.class'));
 		} else {
-			$($(this).parents('.row').find('.rank')).empty();
+			$($(this).parents('.mission-info.row').find('.rank')).empty();
 			$("<option />").text(rank['Rank']).val(rank['RankID']).appendTo($(this).parents('.row').find('.rank'));
-			$($(this).parents('.row').find('.class')).empty();
+			$($(this).parents('.mission-info.row').find('.class')).empty();
 			$("<option />").text(rank['Class']).val(rank['ClassID']).appendTo($(this).parents('.row').find('.class'));
 		}
 	});
