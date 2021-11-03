@@ -52,7 +52,10 @@
 			$missionFields['turns'] = $missionData['turns'];
 		}
 		
-		$missionFields['is_chain'] = $missionData['is_chain'];
+		if(isset($missionData['is_chain'])) {
+			$missionFields['is_chain'] = $missionData['is_chain'];
+		}
+		
 		if(isset($missionData['is_infiltration'])) {
 			$missionFields['is_infiltration'] = $missionData['is_infiltration'];
 		}
