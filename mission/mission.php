@@ -152,20 +152,16 @@
 		for( $i = 0; $i < $soldierCount; $i++ ) {
 			$missionSoldier = new SoldierMission();
 			
-			$shotsArray = explode("/",$missionData['shots'][$i]);
-			$overwatchArray = explode("/",$missionData['overwatch'][$i]);
-			$meleeArray = explode("/",$missionData['melee'][$i]);
-			
 			$MSArray['mission_id'] = $missionID;
 			$MSArray['soldier_id'] = $missionData['soldier_id'][$i];
 			$MSArray['rank_id'] = $missionData['rank_id'][$i];
 			$MSArray['class_id'] = $missionData['class_id'][$i];
-			$MSArray['shots_hit'] = $shotsArray[0];
-			$MSArray['shots_taken'] = $shotsArray[1];
-			$MSArray['overwatch_hit'] = $overwatchArray[0];
-			$MSArray['overwatch_taken'] = $overwatchArray[1];
-			$MSArray['melee_hit'] = $meleeArray[0];
-			$MSArray['melee_taken'] = $meleeArray[1];
+			$MSArray['shots_hit'] = $missionData['shots_hit'][$i];
+			$MSArray['shots_taken'] = $missionData['shots_taken'][$i];
+			$MSArray['overwatch_hit'] = $missionData['overwatch_hit'][$i];
+			$MSArray['overwatch_taken'] = $missionData['overwatch_taken'][$i];
+			$MSArray['melee_hit'] = $missionData['melee_hit'][$i];
+			$MSArray['melee_taken'] = $missionData['melee_taken'][$i];
 			$MSArray['damage'] = $missionData['damage'][$i];
 			$MSArray['killed_aliens'] = $missionData['killed_aliens'][$i];
 			$MSArray['killed_lost'] = $missionData['killed_lost'][$i];

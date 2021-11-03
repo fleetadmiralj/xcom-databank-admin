@@ -132,7 +132,7 @@ $(function(){
 		soldiers = dataMission;
 	});
 	
-	$(document).on("change", ".soldierID-field select", function(e) {
+	$(document).on("change", "select.soldierid", function(e) {
 		e.preventDefault();
 		var selection = $(this).find(":selected").val();
 		var rank = soldiers[selection];
