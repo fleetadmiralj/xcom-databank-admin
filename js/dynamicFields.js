@@ -102,7 +102,7 @@ $(function(){
 		console.log($(this).find(":selected").val());
 		var selection = $(this).find(":selected").val();
 		var alienType = baseAliens[selection];
-		console.log($(this).parents('.row'));
+		console.log($(this).parents('.mission-info.row'));
 		console.log($($(this).parents('.row').find('.alien')));
 		$($(this).parents('.row').find('.alien')).empty();
 		for (alien in alienType) {
