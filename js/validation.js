@@ -155,59 +155,59 @@ function validate() {
 	}
 	
 	/**** Validation for Mission Add/Edit Form ****/
-	if($('#mission-form').length) {
+	// if($('#mission-form').length) {
 	
 		// If Operation Name field is blank, validation failed
-		if ($('.operation-name').val() == "") {
-			$('.operation-name').css("background-color", "#f2dede");
-			validated = false;
-		}
+		//if ($('.operation-name').val() == "") {
+		//	$('.operation-name').css("background-color", "#f2dede");
+		//	validated = false;
+		//}
 		
 		//If Is Not Infiltration, but Infiltration % has a value OR if *IS* Infiltration, but Infiltration % does NOT have a value
-		if($('input[name=is_infiltration]:checked').val() == "0" && $('.infiltration').val() != "") {
-			$('.infiltration').css("background-color", "#f2dede");
-			validated = false;
-		} else if($('input[name=is_infiltration]:checked').val() == "1" && !($.isNumeric($('.infiltration').val()))) {
-			$('.infiltration').css("background-color", "#f2dede");
-			validated = false;
-		} else if($('.infiltration').val() != 0 && ($('.infiltration').val() < 100 || $('.infiltration').val() > 250)) {
-			$('.infiltration').css("background-color", "#f2dede");
-			validated = false;
-		}
+		//if($('input[name=is_infiltration]:checked').val() == "0" && $('.infiltration').val() != "") {
+		//	$('.infiltration').css("background-color", "#f2dede");
+		//	validated = false;
+		//} else if($('input[name=is_infiltration]:checked').val() == "1" && !($.isNumeric($('.infiltration').val()))) {
+		//	$('.infiltration').css("background-color", "#f2dede");
+		//	validated = false;
+		//} else if($('.infiltration').val() != 0 && ($('.infiltration').val() < 100 || $('.infiltration').val() > 250)) {
+		//	$('.infiltration').css("background-color", "#f2dede");
+		//	validated = false;
+		//}
 
 		//If is infiltration and value is non-Numeric, throw error
-		if(isNaN($('.infiltration').val())) {
-			$('.infiltration').css("background-color", "#f2dede");
-			validated = false;
-		}
+		//if(isNaN($('.infiltration').val())) {
+		//	$('.infiltration').css("background-color", "#f2dede");
+		//	validated = false;
+		//}
 		
 		// If Location field is blank, validation failed
-		if ($('.location').val() == "") {
-			$('.location').css("background-color", "#f2dede");
-			validated = false;
-		}
+		//if ($('.location').val() == "") {
+		//	$('.location').css("background-color", "#f2dede");
+		//	validated = false;
+		//}
 		
 		// if Mission Date field is blank, validation failed
-		if ($('.mission-date').val() == "") {
-			$('.mission-date').css("background-color", "#f2dede");
-			validated = false;
-		}
+		//if ($('.mission-date').val() == "") {
+		//	$('.mission-date').css("background-color", "#f2dede");
+		//	validated = false;
+		//}
 		
 		// if Episode field is blank, validation failed
-		if ($('.episode').val() == "") {
-			$('.episode').css("background-color", "#f2dede");
-			validated = false;
-		}
+		//if ($('.episode').val() == "") {
+		//	$('.episode').css("background-color", "#f2dede");
+		//	validated = false;
+		//}
 
 		
 		// If Turns field is blank or 0, validation failed
-		if (($('.turns').val() == "") ||  ($('.turns').val() == "0")) {
-			$('.turns').css("background-color", "#f2dede");
-			validated = false;
-		}
+		//if (($('.turns').val() == "") ||  ($('.turns').val() == "0")) {
+		//	$('.turns').css("background-color", "#f2dede");
+		//	validated = false;
+		//}
 		
 		// If either soldier is set to "other" or rank is set to "N/A" but not both, validation failed
-		$('.soldierid').each( function(){
+		/* $('.soldierid').each( function(){
 			if (($(this).val() == "0" && $(this).parents('.row').find('.rank').val() != "0") || ($(this).val() != "0" && $(this).parents('.row').find('.rank').val() == "0")) {
 				$(this).css("background-color", "#f2dede");
 				$(this).parents('.row').find('.rank').css("background-color", "#f2dede");
@@ -400,8 +400,8 @@ function validate() {
 					validated = false;
 				}
 			});
-		}
-	} // End Mission Form Validation
+		
+	} */ // End Mission Form Validation
 	
 	/**** Validation for Covert Action Form ****/
 	if($('#covert-form').length) {
