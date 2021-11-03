@@ -238,15 +238,6 @@ form div.row {
 	margin-bottom: 20px;
 }
 
-form input.reward.form-control,
-form .repeat-parent select.promoted,
-form .repeat-parent input.killed {
-	width: -moz-calc(100% - 40px);
-	width: -webkit-calc(100% - 40px);
-	width: -o-calc(100% - 40px);
-	width: calc(100% - 40px);
-}
-
 div.form-input,
 div.form-set {	clear: both;
 }
