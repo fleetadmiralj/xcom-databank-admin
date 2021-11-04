@@ -43,76 +43,85 @@ $(document).on("change", "#mission-form .operation-name", function(e) {
 });
 
 function soldierRankClassCheck(input) {
-	console.log ('Soldier ID Check Triggered');
-	
 	soldierParent = input.parentNode.parentNode;
 	
 	soldierField = soldierParent.querySelector('#soldierid');
 	rankField = soldierParent.querySelector('#rank');
 	classField = soldierParent.querySelector('#class');
-	
-	console.log(soldierField);
-	console.log(rankField);
-	console.log(classField);
+	valid = true;
 	
 	// If Soldier is not empty but Rank is - error
 	if(soldierField.value != "" && rankField.value == "") {
 		soldierField.setCustomValidity('Soldier Cannot be selected without a rank');
 		rankField.setCustomValidity('Soldier Cannot be selected without a rank');
+		valid = false;
 	}
 	
 	// If Soldier is empty but Rank is not - error
 	if(soldierField.value == "" && rankField.value != "") {
 		soldierField.setCustomValidity('Soldier Cannot be selected without a rank');
-		rankField.setCustomValidity('Soldier Cannot be selected without a rank');	
+		rankField.setCustomValidity('Soldier Cannot be selected without a rank');
+		valid = false;
 	}
 	
 	// If Soldier is not empty but Class is - error
 	if(soldierField.value != "" && classField.value == "") {
 		soldierField.setCustomValidity('Soldier Cannot be selected without a class');
 		classField.setCustomValidity('Soldier Cannot be selected without a class');
+		valid = false;
 	}
 	
 	// If Soldier is empty but Class is not
 	if(soldierField.value == "" && classField.value != "") {
 		soldierField.setCustomValidity('Soldier Cannot be selected without a class');
 		classField.setCustomValidity('Soldier Cannot be selected without a class');
+		valid = false;
 	}
 	
 	// If Soldier, Rank, and Class are all empty - fields validate
-	if(soldierField.value == "" && rankField.value == "" && classField.value == "") {
+	if(valid) {
 		soldierField.setCustomValidity('');
 		rankField.setCustomValidity('');
 		classField.setCustomValidity('');
 	}
+}
+
+function shotsCheck(input) {
+	soldierParent = input.parentNode;
 	
-	// If Soldier, Rank, and Class fields are all *not* empty - fields validate
-	if(soldierField.value != "" && rankField.value != "" && classField.value != "") {
-		soldierField.setCustomValidity('');
-		rankField.setCustomValidity('');
-		classField.setCustomValidity('');
+	shotsHit = soldierParent.querySelector('#shots-hit');
+	shotsTaken = soldierParent.querySelector('#shots-taken');
+	valid = true;
+	
+	// If Shots Hit isn't numeric - error
+	if(isNaN(parseInt((shotsHit.value)))) {
+		shotsHit.setCustomValidity('Shots Hit is a Number');
+		valid = false;
+	}
+	
+	// If Shots Taken isn't numeric - error
+	if(isNaN(parseInt(Number(shotsTaken.value)))) {
+		shotsTaken.setCustomValidity('Shots Taken is a Number');
+		valid = false;
+	}
+	
+	// If Shots Hit > Shots Taken - Error
+	if(Number(shotsHit.value) > Number(shotsTaken.value)) {
+		shotsHit.setCustomValidity('Shots Hit Cannot be greater than Shots Taken');
+		shotsTaken.setCustomValidity('Shots Hit Cannot be greater than Shots Taken');
+		valid = false;
+	}
+	
+	// If Shots Hit is a number, Shots Taken is a Number, and Shots hit is = or < Shots Taken - Validated
+	if(valid) {
+		shotsHit.setCustomValidity('');
+		shotsTaken.setCustomValidity('');
 	}
 }
 	
 	
 function missionValidate() {
 	console.log('Mission Validate Triggered');
-	// If either soldier is set to "other" or rank is set to "N/A" but not both, validation failed
-	/* $('.soldierid').each( function(){
-		console.log('Soldier ID Run');
-		if (($(this).val() == "" && $(this).parents('.mission-info.row').find('.rank').val() != "") || ($(this).val() != "" && $(this).parents('.mission-info.row').find('.rank').val() == "")) {
-			console.log('Error Found');
-			$(this).addClass("is-invalid");
-			$(this).parents('.mission-info.row').find('.rank').addClass("is-invalid");
-			$(this).parents('.field-repeat').css("border-color", "#dc3545");
-		} else {
-			console.log('No Error Found');
-			$(this).removeClass("is-invalid");
-			$(this).parents('.mission-info.row').find('.rank').removeClass("is-invalid");
-			$(this).parents('.field-repeat').css("border-color", "#198754");
-		}
-	}); */
-		
 		// If Total shots hit > total shots taken; If total overwatch shots hit > overwatch shots taken; if overwatch shots hit > total shots hit; if overwatch shots taken > total shots taken, then validation failed
 		/* $('.shots').each( function(){		
 			var shots = $(this).val();
