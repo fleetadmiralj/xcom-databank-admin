@@ -24,201 +24,40 @@ $(document).ready(function(){
 	validate();
 });
 
+$(document).on("blur", "#mission-form .form-control", function(e) {
+	missionValidate();
+});
+
 $(document).on("blur", ".form-control", function(e) {
 	validate();
 });
 
-// Initiate Field Validation
-function validate() {
-	var validated = true;
-	
-	// Reset all containing divs to white
-	$('.field-repeat').each( function(){
-		$(this).css("background-color", "#ffffff");
-	});
-	$('.is-chain-field').css("background-color", "");
-	$('.is-infiltration-field').css("background-color", "");
-	
-	// Reset all fields to white
-	$('.form-control').each( function(){
-		if(!$(this).prop('disabled')) {
-			$(this).css("background-color", "#ffffff");
-		}
-		else {
-			$(this).css("background-color", "");
-		}
-	});
-	
-	/**** Validation for Soldier Form ****/
-	if($('#soldier-form').length) {
-		// If First Name field is blank, validation failed
-		if ($('.first-name').val() == "") {
-			$('.first-name').css("background-color", "#f2dede");
-			validated = false;
-		}
+// Validation for Mission Add/Edit Form that isn't already handled
+
+
+$(document).on("change", "#mission-form .operation-name", function(e) {
+	if($(this).val() == "") {
 		
-		// If Last Name field is blank, validation failed
-		if ($('.last-name').val() == "") {
-			$('.last-name').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		//If Aim field isn't numeric
-		if($.isNumeric($('.aim').val()) == false) {
-			$('.aim').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		// If Aim < 40, validation failed
-		if ($('.aim').val() < 40) {
-			$('.aim').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		//If Movement field isn't numeric
-		if($.isNumeric($('.movement').val()) == false) {
-			$('.movement').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		// If Movement < 5, validation failed
-		if ($('.movement').val() < 5) {
-			$('.movement').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		//If Health field isn't numeric
-		if($.isNumeric($('.health').val()) == false) {
-			$('.health').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		// If Health < 3, validation failed
-		if ($('.health').val() < 3) {
-			$('.health').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		//If Hack field isn't numeric
-		if($.isNumeric($('.hack').val()) == false) {
-			$('.hack').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		// If Hack < 0, validation failed
-		if ($('.hack').val() < 0) {
-			$('.hack').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		//If Dodge field isn't numeric
-		if($.isNumeric($('.dodge').val()) == false) {
-			$('.dodge').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		// If Dodge < 0, validation failed
-		if ($('.dodge').val() < 0) {
-			$('.dodge').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		//If Will field isn't disabled and isn't numeric
-		if($.isNumeric($('.will').val()) == false && $('.will').is(':disabled') == false) {
-			$('.will').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		// If Will < 25 and isn't disabled, validation failed
-		if ($('.will').val() < 25 && $('.will').is(':disabled') == false) {
-			$('.will').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		//If Psi field isn't disabled and isn't numeric
-		if($.isNumeric($('.psi').val()) == false && $('.psi').is(':disabled') == false) {
-			$('.psi').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		// If Psi < 0 and isn't disabled, validation failed
-		if ($('.psi').val() < 0 && $('.psi').is(':disabled') == false) {
-			$('.psi').css("background-color", "#f2dede");
-			validated = false;
-		}
-		
-		// If Picture field is blank and currentphoto doesn't exist, validation failed
-		if ($('.soldier-picture').val() == "" && ($('.current-photo').length == 0)) {
-			$('.soldier-picture').css("background-color", "#f2dede");
-			validated = false;
-		}
 	}
-	
-	/**** Validation for Mission Add/Edit Form ****/
-	// if($('#mission-form').length) {
-	
-		// If Operation Name field is blank, validation failed
-		//if ($('.operation-name').val() == "") {
-		//	$('.operation-name').css("background-color", "#f2dede");
-		//	validated = false;
-		//}
-		
-		//If Is Not Infiltration, but Infiltration % has a value OR if *IS* Infiltration, but Infiltration % does NOT have a value
-		//if($('input[name=is_infiltration]:checked').val() == "0" && $('.infiltration').val() != "") {
-		//	$('.infiltration').css("background-color", "#f2dede");
-		//	validated = false;
-		//} else if($('input[name=is_infiltration]:checked').val() == "1" && !($.isNumeric($('.infiltration').val()))) {
-		//	$('.infiltration').css("background-color", "#f2dede");
-		//	validated = false;
-		//} else if($('.infiltration').val() != 0 && ($('.infiltration').val() < 100 || $('.infiltration').val() > 250)) {
-		//	$('.infiltration').css("background-color", "#f2dede");
-		//	validated = false;
-		//}
+});
 
-		//If is infiltration and value is non-Numeric, throw error
-		//if(isNaN($('.infiltration').val())) {
-		//	$('.infiltration').css("background-color", "#f2dede");
-		//	validated = false;
-		//}
+function missionValidate() {
 		
-		// If Location field is blank, validation failed
-		//if ($('.location').val() == "") {
-		//	$('.location').css("background-color", "#f2dede");
-		//	validated = false;
-		//}
-		
-		// if Mission Date field is blank, validation failed
-		//if ($('.mission-date').val() == "") {
-		//	$('.mission-date').css("background-color", "#f2dede");
-		//	validated = false;
-		//}
-		
-		// if Episode field is blank, validation failed
-		//if ($('.episode').val() == "") {
-		//	$('.episode').css("background-color", "#f2dede");
-		//	validated = false;
-		//}
-
-		
-		// If Turns field is blank or 0, validation failed
-		//if (($('.turns').val() == "") ||  ($('.turns').val() == "0")) {
-		//	$('.turns').css("background-color", "#f2dede");
-		//	validated = false;
-		//}
-		
-		// If either soldier is set to "other" or rank is set to "N/A" but not both, validation failed
-		/* $('.soldierid').each( function(){
-			if (($(this).val() == "0" && $(this).parents('.row').find('.rank').val() != "0") || ($(this).val() != "0" && $(this).parents('.row').find('.rank').val() == "0")) {
-				$(this).css("background-color", "#f2dede");
-				$(this).parents('.row').find('.rank').css("background-color", "#f2dede");
-				$(this).parents('.field-repeat').css("background-color", "#f2dede");
-				validated = false;
-				console.log("Other, N/A validation failing");
-			}
-		});
+	// If either soldier is set to "other" or rank is set to "N/A" but not both, validation failed
+	$('.soldierid').each( function(){
+		if (($(this).val() == "0" && $(this).parents('.row').find('.rank').val() != "0") || ($(this).val() != "0" && $(this).parents('.row').find('.rank').val() == "0")) {
+			$(this).addClass("is-invalid");
+			$(this).parents('.mission-info.row').find('.rank').addClass("is-invalid");
+			$(this).parents('.field-repeat').css("border-color", "#dc3545");
+		} else {
+			$(this).removeClass("is-invalid");
+			$(this).parents('.mission-info.row').find('.rank').removeClass("is-invalid");
+			$(this).parents('.field-repeat').css("border-color", "#198754");
+		}
+	});
 		
 		// If Total shots hit > total shots taken; If total overwatch shots hit > overwatch shots taken; if overwatch shots hit > total shots hit; if overwatch shots taken > total shots taken, then validation failed
-		$('.shots').each( function(){		
+		/* $('.shots').each( function(){		
 			var shots = $(this).val();
 			var overwatch = $(this).parents('.row').find('.overwatch').val();
 			var melee = $(this).parents('.row').find('.melee').val();
@@ -399,9 +238,122 @@ function validate() {
 					$(this).parents('.field-repeat').css("background-color", "#f2dede");
 					validated = false;
 				}
-			});
+			}); */
+}
+
+// Initiate Field Validation
+function validate() {
+	var validated = true;
+	
+	// Reset all containing divs to white
+	$('.field-repeat').each( function(){
+		$(this).css("border-color", "#198754");
+	});
+	
+	/**** Validation for Soldier Form ****/
+	if($('#soldier-form').length) {
+		// If First Name field is blank, validation failed
+		if ($('.first-name').val() == "") {
+			$('.first-name').css("background-color", "#f2dede");
+			validated = false;
+		}
 		
-	} */ // End Mission Form Validation
+		// If Last Name field is blank, validation failed
+		if ($('.last-name').val() == "") {
+			$('.last-name').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		//If Aim field isn't numeric
+		if($.isNumeric($('.aim').val()) == false) {
+			$('.aim').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		// If Aim < 40, validation failed
+		if ($('.aim').val() < 40) {
+			$('.aim').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		//If Movement field isn't numeric
+		if($.isNumeric($('.movement').val()) == false) {
+			$('.movement').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		// If Movement < 5, validation failed
+		if ($('.movement').val() < 5) {
+			$('.movement').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		//If Health field isn't numeric
+		if($.isNumeric($('.health').val()) == false) {
+			$('.health').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		// If Health < 3, validation failed
+		if ($('.health').val() < 3) {
+			$('.health').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		//If Hack field isn't numeric
+		if($.isNumeric($('.hack').val()) == false) {
+			$('.hack').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		// If Hack < 0, validation failed
+		if ($('.hack').val() < 0) {
+			$('.hack').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		//If Dodge field isn't numeric
+		if($.isNumeric($('.dodge').val()) == false) {
+			$('.dodge').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		// If Dodge < 0, validation failed
+		if ($('.dodge').val() < 0) {
+			$('.dodge').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		//If Will field isn't disabled and isn't numeric
+		if($.isNumeric($('.will').val()) == false && $('.will').is(':disabled') == false) {
+			$('.will').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		// If Will < 25 and isn't disabled, validation failed
+		if ($('.will').val() < 25 && $('.will').is(':disabled') == false) {
+			$('.will').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		//If Psi field isn't disabled and isn't numeric
+		if($.isNumeric($('.psi').val()) == false && $('.psi').is(':disabled') == false) {
+			$('.psi').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		// If Psi < 0 and isn't disabled, validation failed
+		if ($('.psi').val() < 0 && $('.psi').is(':disabled') == false) {
+			$('.psi').css("background-color", "#f2dede");
+			validated = false;
+		}
+		
+		// If Picture field is blank and currentphoto doesn't exist, validation failed
+		if ($('.soldier-picture').val() == "" && ($('.current-photo').length == 0)) {
+			$('.soldier-picture').css("background-color", "#f2dede");
+			validated = false;
+		}
+	}
 	
 	/**** Validation for Covert Action Form ****/
 	if($('#covert-form').length) {
