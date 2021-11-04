@@ -14,7 +14,7 @@ $(function(){
 		updateChain();
 	});
 	
-	$(document).on("change", "input[name=is_infiltration]", function(e) {
+	$(document).on("change", "#is-infiltration", function(e) {
 		updateInfiltrate();
 	});
 	
@@ -82,14 +82,14 @@ $(function(){
 	}
 	
 	function updateInfiltrate() {
-		if($('#is_infiltration:checked').val() == 0) {
-			$('#is_infiltration').val("");
-			$('#is_infiltration').attr('disabled', "disabled");
-			$('#is_infiltration').removeAttr("required");
+		if($('#is-infiltration:checked').val() == 0) {
+			$('#is-infiltration').val("");
+			$('#is-infiltration').attr('disabled', "disabled");
+			$('#is-infiltration').removeAttr("required");
 		}
-		else if($('input#is_infiltration:checked').val() == 1) {
-			$('#is_infiltration').removeAttr("disabled");
-			$('#is_infiltration').attr('required', "required");
+		else if($('input#is-infiltration:checked').val() == 1) {
+			$('#is-infiltration').removeAttr("disabled");
+			$('#is-infiltration').attr('required', "required");
 		}
 	}
 
