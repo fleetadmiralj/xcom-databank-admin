@@ -44,11 +44,12 @@ $(document).on("change", "#mission-form .operation-name", function(e) {
 
 function soldierRankClassCheck(input) {
 	console.log ('Soldier ID Check Triggered');
-	console.log (input);
 	
-	soldierField = $(input).parents('.mission-info.row').find('.soldierid');
-	rankField = $(input).parents('.mission-info.row').find('.rank');
-	classField = $(input).parents('.mission-info.row').find('.class');
+	soldierParent = input.parentNode();
+	
+	soldierField = soldierParent.querySelector('#soldierid');
+	rankField = soldierParent.querySelector('#rank');
+	classField = soldierParent.querySelector('#class');
 	
 	console.log(soldierField);
 	console.log(rankField);
