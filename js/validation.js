@@ -42,10 +42,57 @@ $(document).on("change", "#mission-form .operation-name", function(e) {
 	}
 });
 
+function soldierRankClassCheck(input) {
+	console.log ('Soldier ID Check Triggered');
+	
+	soldierField = input.parents('.mission-info.row').find('.soldierid');
+	rankField = input.parents('.mission-info.row').find('.rank');
+	classField = input.parents('.mission-info.row').find('.class');
+	
+	// If Soldier is not empty but Rank is - error
+	if(soldierField.val() != "" && rankField.val() == "") {
+		soldierField.setCustomValidity('Soldier Cannot be selected without a rank');
+		rankField.setCustomValidity('Soldier Cannot be selected without a rank');
+	}
+	
+	// If Soldier is empty but Rank is not - error
+	if(soldierField.val() == "" && rankField.val() != "") {
+		soldierField.setCustomValidity('Soldier Cannot be selected without a rank');
+		rankField.setCustomValidity('Soldier Cannot be selected without a rank');	
+	}
+	
+	// If Soldier is not empty but Class is - error
+	if(soldierField.val() != "" && classField.val() == "") {
+		soldierField.setCustomValidity('Soldier Cannot be selected without a class');
+		classField.setCustomValidity('Soldier Cannot be selected without a class');
+	}
+	
+	// If Soldier is empty but Class is not
+	if(soldierField.val() == "" && classField.val() != "") {
+		soldierField.setCustomValidity('Soldier Cannot be selected without a class');
+		classField.setCustomValidity('Soldier Cannot be selected without a class');
+	}
+	
+	// If Soldier, Rank, and Class are all empty - fields validate
+	if(soldierField.val() == "" && rankField.val() == "" && classField.val() == "") {
+		soldierField.setCustomValidity('');
+		rankField.setCustomValidity('');
+		classField.setCustomValidity('');
+	}
+	
+	// If Soldier, Rank, and Class fields are all *not* empty - fields validate
+	if(soldierField.val() != "" && rankField.val() != "" && classField.val() != "") {
+		soldierField.setCustomValidity('');
+		rankField.setCustomValidity('');
+		classField.setCustomValidity('');
+	}
+}
+	
+	
 function missionValidate() {
 	console.log('Mission Validate Triggered');
 	// If either soldier is set to "other" or rank is set to "N/A" but not both, validation failed
-	$('.soldierid').each( function(){
+	/* $('.soldierid').each( function(){
 		console.log('Soldier ID Run');
 		if (($(this).val() == "" && $(this).parents('.mission-info.row').find('.rank').val() != "") || ($(this).val() != "" && $(this).parents('.mission-info.row').find('.rank').val() == "")) {
 			console.log('Error Found');
@@ -58,7 +105,7 @@ function missionValidate() {
 			$(this).parents('.mission-info.row').find('.rank').removeClass("is-invalid");
 			$(this).parents('.field-repeat').css("border-color", "#198754");
 		}
-	});
+	}); */
 		
 		// If Total shots hit > total shots taken; If total overwatch shots hit > overwatch shots taken; if overwatch shots hit > total shots hit; if overwatch shots taken > total shots taken, then validation failed
 		/* $('.shots').each( function(){		
