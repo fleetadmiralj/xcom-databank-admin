@@ -44,10 +44,15 @@ $(document).on("change", "#mission-form .operation-name", function(e) {
 
 function soldierRankClassCheck(input) {
 	console.log ('Soldier ID Check Triggered');
+	console.log (input);
 	
-	soldierField = input.parents('.mission-info.row').find('.soldierid');
-	rankField = input.parents('.mission-info.row').find('.rank');
-	classField = input.parents('.mission-info.row').find('.class');
+	soldierField = $(input).parents('.mission-info.row').find('.soldierid');
+	rankField = $(input).parents('.mission-info.row').find('.rank');
+	classField = $(input).parents('.mission-info.row').find('.class');
+	
+	console.log(soldierField);
+	console.log(rankField);
+	console.log(classField);
 	
 	// If Soldier is not empty but Rank is - error
 	if(soldierField.val() != "" && rankField.val() == "") {
