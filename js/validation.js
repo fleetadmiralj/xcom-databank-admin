@@ -56,38 +56,38 @@ function soldierRankClassCheck(input) {
 	console.log(classField);
 	
 	// If Soldier is not empty but Rank is - error
-	if(soldierField.val() != "" && rankField.val() == "") {
+	if(soldierField.value != "" && rankField.value == "") {
 		soldierField.setCustomValidity('Soldier Cannot be selected without a rank');
 		rankField.setCustomValidity('Soldier Cannot be selected without a rank');
 	}
 	
 	// If Soldier is empty but Rank is not - error
-	if(soldierField.val() == "" && rankField.val() != "") {
+	if(soldierField.value == "" && rankField.value != "") {
 		soldierField.setCustomValidity('Soldier Cannot be selected without a rank');
 		rankField.setCustomValidity('Soldier Cannot be selected without a rank');	
 	}
 	
 	// If Soldier is not empty but Class is - error
-	if(soldierField.val() != "" && classField.val() == "") {
+	if(soldierField.value != "" && classField.value == "") {
 		soldierField.setCustomValidity('Soldier Cannot be selected without a class');
 		classField.setCustomValidity('Soldier Cannot be selected without a class');
 	}
 	
 	// If Soldier is empty but Class is not
-	if(soldierField.val() == "" && classField.val() != "") {
+	if(soldierField.value == "" && classField.value != "") {
 		soldierField.setCustomValidity('Soldier Cannot be selected without a class');
 		classField.setCustomValidity('Soldier Cannot be selected without a class');
 	}
 	
 	// If Soldier, Rank, and Class are all empty - fields validate
-	if(soldierField.val() == "" && rankField.val() == "" && classField.val() == "") {
+	if(soldierField.value == "" && rankField.value == "" && classField.value == "") {
 		soldierField.setCustomValidity('');
 		rankField.setCustomValidity('');
 		classField.setCustomValidity('');
 	}
 	
 	// If Soldier, Rank, and Class fields are all *not* empty - fields validate
-	if(soldierField.val() != "" && rankField.val() != "" && classField.val() != "") {
+	if(soldierField.value != "" && rankField.value != "" && classField.value != "") {
 		soldierField.setCustomValidity('');
 		rankField.setCustomValidity('');
 		classField.setCustomValidity('');
