@@ -45,7 +45,7 @@ $(document).on("change", "#mission-form .operation-name", function(e) {
 function soldierRankClassCheck(input) {
 	console.log ('Soldier ID Check Triggered');
 	
-	soldierParent = input.parentNode();
+	soldierParent = input.parentNode;
 	
 	soldierField = soldierParent.querySelector('#soldierid');
 	rankField = soldierParent.querySelector('#rank');
