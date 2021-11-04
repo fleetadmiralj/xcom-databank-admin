@@ -15,7 +15,6 @@ $(function(){
 	});
 	
 	$(document).on("change", "#is-infiltration", function(e) {
-		console.log('Is Infiltration has changed');
 		updateInfiltrate();
 	});
 	
@@ -84,13 +83,13 @@ $(function(){
 	
 	function updateInfiltrate() {
 		console.log('Inside UpdateInfiltrate');
-		if($('#is-infiltration:checked').val() == 0) {
+		if($('#is-infiltration').val() == 0) {
 			console.log('Check is disabled');
 			$('#is-infiltration').val("");
 			$('#is-infiltration').attr('disabled', "disabled");
 			$('#is-infiltration').removeAttr("required");
 		}
-		else if($('input#is-infiltration:checked').val() == 1) {
+		else if($('#is-infiltration').val() == 1) {
 			console.log('Check is enabled');
 			$('#is-infiltration').removeAttr("disabled");
 			$('#is-infiltration').attr('required', "required");
