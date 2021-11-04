@@ -29,7 +29,7 @@ $(document).on("blur", "#mission-form .form-control", function(e) {
 	missionValidate();
 });
 
-$(document).on("blur", ".form-control", function(e) {
+$(document).on("change", ".form-control", function(e) {
 	validate();
 });
 
@@ -47,7 +47,7 @@ function missionValidate() {
 	// If either soldier is set to "other" or rank is set to "N/A" but not both, validation failed
 	$('.soldierid').each( function(){
 		console.log('Soldier ID Run');
-		if (($(this).val() == "0" && $(this).parents('.mission-info.row').find('.rank').val() != "0") || ($(this).val() != "0" && $(this).parents('.mission-info.row').find('.rank').val() == "0")) {
+		if (($(this).val() == "" && $(this).parents('.mission-info.row').find('.rank').val() != "") || ($(this).val() != "" && $(this).parents('.mission-info.row').find('.rank').val() == "")) {
 			console.log('Error Found');
 			$(this).addClass("is-invalid");
 			$(this).parents('.mission-info.row').find('.rank').addClass("is-invalid");
