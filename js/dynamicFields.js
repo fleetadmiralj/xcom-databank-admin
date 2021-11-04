@@ -83,16 +83,15 @@ $(function(){
 	
 	function updateInfiltrate() {
 		console.log('Inside UpdateInfiltrate');
-		if($('#is-infiltration').val() == 0) {
+		if($('#is-infiltration').is(":checked")) {
+			console.log('Check is enabled');
+			$('#is-infiltration').removeAttr("disabled");
+			$('#is-infiltration').attr('required', "required");
+		} else {
 			console.log('Check is disabled');
 			$('#is-infiltration').val("");
 			$('#is-infiltration').attr('disabled', "disabled");
 			$('#is-infiltration').removeAttr("required");
-		}
-		else if($('#is-infiltration').val() == 1) {
-			console.log('Check is enabled');
-			$('#is-infiltration').removeAttr("disabled");
-			$('#is-infiltration').attr('required', "required");
 		}
 	}
 
