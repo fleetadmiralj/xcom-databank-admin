@@ -85,13 +85,13 @@ $(function(){
 		console.log('Inside UpdateInfiltrate');
 		if($('#is-infiltration').is(":checked")) {
 			console.log('Check is enabled');
-			$('#is-infiltration').removeAttr("disabled");
-			$('#is-infiltration').attr('required', "required");
+			$('#infiltration').removeAttr("disabled");
+			$('#infiltration').attr('required', "required");
 		} else {
 			console.log('Check is disabled');
-			$('#is-infiltration').val("");
-			$('#is-infiltration').attr('disabled', "disabled");
-			$('#is-infiltration').removeAttr("required");
+			$('#infiltration').val("");
+			$('#infiltration').attr('disabled', "disabled");
+			$('#infiltration').removeAttr("required");
 		}
 	}
 
