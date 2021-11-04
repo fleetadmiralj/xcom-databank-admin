@@ -82,12 +82,14 @@ $(function(){
 	}
 	
 	function updateInfiltrate() {
-		if($('input[name=is_infiltration]:checked').val() == 0) {
+		if($('input#is_infiltration:checked').val() == 0) {
 			$('.infiltration').val("");
 			$('.infiltration').attr('disabled', "disabled");
+			$('.infiltration').removeAttr("required");
 		}
-		else if($('input[name=is_infiltration]:checked').val() == 1) {
+		else if($('input#is_infiltration:checked').val() == 1) {
 			$('.infiltration').removeAttr("disabled");
+			$('.infiltration').attr('required', "required");
 		}
 	}
 
