@@ -82,14 +82,14 @@ $(function(){
 	}
 	
 	function updateInfiltrate() {
-		if($('input#is_infiltration:checked').val() == 0) {
-			$('.infiltration').val("");
-			$('.infiltration').attr('disabled', "disabled");
-			$('.infiltration').removeAttr("required");
+		if($('#is_infiltration:checked').val() == 0) {
+			$('#is_infiltration').val("");
+			$('#is_infiltration').attr('disabled', "disabled");
+			$('#is_infiltration').removeAttr("required");
 		}
 		else if($('input#is_infiltration:checked').val() == 1) {
-			$('.infiltration').removeAttr("disabled");
-			$('.infiltration').attr('required', "required");
+			$('#is_infiltration').removeAttr("disabled");
+			$('#is_infiltration').attr('required', "required");
 		}
 	}
 
