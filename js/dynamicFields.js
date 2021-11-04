@@ -97,7 +97,7 @@ $(function(){
 		baseAliens = data;
 	});
 				
-	$(document).on("change", ".base-alien-field select", function(e) {
+	$(document).on("change", "select.base-alien", function(e) {
 		e.preventDefault();
 		console.log($(this).find(":selected").val());
 		var selection = $(this).find(":selected").val();
