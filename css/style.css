@@ -294,3 +294,20 @@ img.admin-icon {
 form {
 	width: 100%;
 }
+
+/* Overriding some Bootstrap styles */
+.was-validated .form-control:valid,
+.was-validated .form-control:invalid {
+	background-image: none;
+	padding-right: 0.5em;
+}
+
+.was-validated .col-md-1 .input-group input {
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	text-align: center;
+}
+
+.was-validated .col-md-1 .input-group .input-group-text {
+	padding: .375rem .5rem;
+}
