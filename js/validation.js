@@ -316,6 +316,11 @@ function validate() {
 		$(this).css("border-color", "#198754");
 	});
 	
+	// Reset all form fields divs to white
+	$('.form-control').each( function(){
+		$(this).css("background-color", "#ffffff");
+	});
+	
 	/**** Validation for Soldier Form ****/
 	if($('#soldier-form').length) {
 		// If First Name field is blank, validation failed
