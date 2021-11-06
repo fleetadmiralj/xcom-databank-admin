@@ -311,18 +311,18 @@ function missionValidate() {
 function validate() {
 	var validated = true;
 	
-	// Reset all containing divs to white
-	$('.field-repeat').each( function(){
-		$(this).css("border-color", "#198754");
-	});
-	
-	// Reset all form fields divs to white
-	$('.form-control').each( function(){
-		$(this).css("border-color", "#198754");
-	});
-	
 	/**** Validation for Soldier Form ****/
 	if($('#soldier-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If First Name field is blank, validation failed
 		if ($('.first-name').val() == "") {
 			$('.first-name').css("border-color", "#dc3545");
@@ -428,6 +428,16 @@ function validate() {
 	
 	/**** Validation for Covert Action Form ****/
 	if($('#covert-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Mission field is blank, validation failed
 		if ($('.mission').val() == "") {
 			$('.mission').css("border-color", "#dc3545");
@@ -503,6 +513,16 @@ function validate() {
 	
 	/**** Validation for Bonds Add/Edit Form ****/
 	if($('#bond-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If the same soldier is selected in both soldier fields, validation failed
 		if ($('.soldier-one').val() == $('.soldier-two').val()) {
 			$('.soldier-one').css("border-color", "#dc3545");
@@ -514,6 +534,16 @@ function validate() {
 	
 	/**** Validation for Alien Type Add/Edit Form ****/
 	if($('#alien-type-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Alien Type Name field is blank, validation failed
 		if ($('.alien-type-name').val() == "") {
 			$('.alien-type-name').css("border-color", "#dc3545");
@@ -523,6 +553,16 @@ function validate() {
 	
 	/**** Validation for Alien Add/Edit Form ****/
 	if($('#alien-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Alien Name field is blank, validation failed
 		if ($('.alien-name').val() == "") {
 			$('.alien-name').css("border-color", "#dc3545");
@@ -532,6 +572,16 @@ function validate() {
 	
 	/**** Validation for Chosen Add/Edit Form ****/
 	if($('#chosen-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Chosen Name field is blank, validation failed
 		if ($('.chosen-name').val() == "") {
 			$('.chosen-name').css("border-color", "#dc3545");
@@ -546,6 +596,16 @@ function validate() {
 	
 	/**** Validation for Covert Action Type Form ****/
 	if($('#covert-type').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Covert Type Name field is blank
 		if($('.covert-type-name').val() == "") {
 			$('.covert-type-name').css("border-color", "#dc3545");
@@ -555,6 +615,16 @@ function validate() {
 	
 	/**** Validation for Dark Event Form ****/
 	if($('#dark-event-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Dark Event Name field is blank
 		if($('.dark-event-name').val() == "") {
 			$('.dark-event-name').css("border-color", "#dc3545");
@@ -570,6 +640,16 @@ function validate() {
 	
 	/**** Validation for Mission Objective Form ****/
 	if($('#objective-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Objective Description field is blank
 		if($('.objective-description').val() == "") {
 			$('.objective-description').css("border-color", "#dc3545");
@@ -579,6 +659,16 @@ function validate() {
 	
 	/**** Validation for Mission Type Form ****/
 	if($('#mission-type-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Mission Type Name field is blank
 		if($('.mission-type-description').val() == "") {
 			$('.mission-type-description').css("border-color", "#dc3545");
@@ -588,6 +678,16 @@ function validate() {
 	
 	/**** Validation for SITREP Form ****/
 	if($('#sitrep-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If SITREP Name field is blank
 		if($('.sitrep-name').val() == "") {
 			$('.sitrep-name').css("border-color", "#dc3545");
@@ -603,6 +703,16 @@ function validate() {
 	
 	/**** Validation for Class Form ****/
 	if($('#class-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Class Name field is blank
 		if($('.class-name').val() == "") {
 			$('.class-name').css("border-color", "#dc3545");
@@ -618,6 +728,16 @@ function validate() {
 	
 	/**** Validation for Rank Form ****/
 	if($('#rank-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Rank Name field is blank
 		if($('.rank-name').val() == "") {
 			$('.rank-name').css("border-color", "#dc3545");
@@ -645,6 +765,16 @@ function validate() {
 	
 	/**** Validation for Skill Form ****/
 	if($('#skill-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Skill Name field is blank
 		if($('.skill-name').val() == "") {
 			$('.skill-name').css("border-color", "#dc3545");
@@ -666,6 +796,16 @@ function validate() {
 	
 	/**** Validation for Gear Form ****/
 	if($('#gear-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Gear Name field is blank
 		if($('.gear-name').val() == "") {
 			$('.gear-name').css("border-color", "#dc3545");
@@ -693,6 +833,16 @@ function validate() {
 	
 	/**** Validation for VIP Form ****/
 	if($('#vip-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If First Name field is blank
 		if($('.vip-first-name').val() == "") {
 			$('.vip-first-name').css("border-color", "#dc3545");
@@ -754,6 +904,16 @@ function validate() {
 	
 	/**** Validation for Research Form ****/
 	if($('#research-form').length) {
+		// Reset all containing divs to white
+		$('.field-repeat').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
+		// Reset all form fields divs to white
+		$('.form-control').each( function(){
+			$(this).css("border-color", "#198754");
+		});
+		
 		// If Name field is blank
 		if($('.research-name').val() == "") {
 			$('.research-name').css("border-color", "#dc3545");
