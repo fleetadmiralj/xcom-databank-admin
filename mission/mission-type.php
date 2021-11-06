@@ -18,6 +18,7 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/header-include.php' ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
 			<div id="main" class="controls input-group">
+			<h2 class="list-header">Add/Edit Mission Type</h2>
 			<?php
 				if($errorMsg != "") {
 			?>
@@ -25,7 +26,7 @@
 			<?php
 				}
 			?>
-				<form action="mission-type.php" method="post" id="mission-type-form">
+				<form action="mission-type.php" method="post" id="mission-type-form" enctype="multipart/form-data" class="was-validated g-3 row" novalidate>
 					<?php missionTypeForm($missionType); ?>
 					
 					<input type="submit" value="Submit" class="submit"> <input type="reset">
