@@ -312,7 +312,8 @@ form {
 	padding: .375rem .5rem;
 }
 
-.btn-add {
+.btn-add,
+.btn-remove {
 	width: 100%;
 	height: 100%;
 }
