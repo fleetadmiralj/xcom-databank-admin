@@ -311,6 +311,17 @@ function missionValidate() {
 function validate() {
 	var validated = true;
 	
+	var form = document.querySelector('.was-validated');
+	if (!form.checkValidity()) {
+		form.querySelector('#submit').classList.remove("btn-primary");
+		form.querySelector('#submit').classList.add("btn-danger");
+		form.querySelector('#submit').disabled = true;
+	} else {
+		form.querySelector('#submit').classList.remove("btn-danger");
+		form.querySelector('#submit').classList.add("btn-primary");
+		form.querySelector('#submit').disabled = false;
+	}
+	
 	/**** Validation for Soldier Form ****/
 	if($('#soldier-form').length) {
 		// Reset all containing divs to white
@@ -653,25 +664,6 @@ function validate() {
 		// If Objective Description field is blank
 		if($('.objective-description').val() == "") {
 			$('.objective-description').css("border-color", "#dc3545");
-			validated = false;
-		}
-	}
-	
-	/**** Validation for Mission Type Form ****/
-	if($('#mission-type-form').length) {
-		// Reset all containing divs to white
-		$('.field-repeat').each( function(){
-			$(this).css("border-color", "#198754");
-		});
-		
-		// Reset all form fields divs to white
-		$('.form-control').each( function(){
-			$(this).css("border-color", "#198754");
-		});
-		
-		// If Mission Type Name field is blank
-		if($('.mission-type-description').val() == "") {
-			$('.mission-type-description').css("border-color", "#dc3545");
 			validated = false;
 		}
 	}

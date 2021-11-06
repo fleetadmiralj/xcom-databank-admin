@@ -26,10 +26,15 @@
 			<?php
 				}
 			?>
-				<form action="mission-type.php" method="post" id="mission-type-form" enctype="multipart/form-data" class="was-validated g-3 row" novalidate>
-					<?php missionTypeForm($missionType); ?>
-					
-					<input type="submit" value="Submit" class="submit"> <input type="reset">
+				<form action="mission-type.php" method="post" id="mission-type-form" enctype="multipart/form-data" class="was-validated" novalidate>
+					<div class="g-3 row">
+						<?php missionTypeForm($missionType); ?>
+					</div>
+					<div class="g-3 row">
+						<div class="col-12">
+							<button type="submit" id="submit" class="submit btn btn-primary">Submit</button>
+						</div>
+					</div>
 					
 				</form>
 			</div>
