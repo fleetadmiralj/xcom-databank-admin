@@ -311,7 +311,7 @@ function missionValidate() {
 function validate() {
 	var validated = true;
 	
-	var form = document.querySelector('.was-validated');
+	/* var form = document.querySelector('.was-validated');
 	if (!form.checkValidity()) {
 		form.querySelector('#submit').classList.remove("btn-primary");
 		form.querySelector('#submit').classList.add("btn-danger");
@@ -320,7 +320,7 @@ function validate() {
 		form.querySelector('#submit').classList.remove("btn-danger");
 		form.querySelector('#submit').classList.add("btn-primary");
 		form.querySelector('#submit').disabled = false;
-	}
+	} */
 	
 	/**** Validation for Soldier Form ****/
 	if($('#soldier-form').length) {
