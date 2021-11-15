@@ -1,5 +1,7 @@
-<?php include_once '/home/joshch9/project/adminInclude.php' ?>
 <?php
+use XCOMDatabank\Missions\MissionType;
+
+include_once __DIR__.'../../project/adminInclude.php';
 
 	$errorMsg = "";
 	$missionType = new MissionType();
@@ -15,8 +17,9 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/header-include.php' ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
+    <?php include_once __DIR__.'/../php/header-include.php' ?>
+    <body>
+        <?php include_once __DIR__.'/../php/page-head.php' ?>
 			<div id="main" class="controls input-group">
 			<h2 class="list-header">Add/Edit Mission Type</h2>
 			<?php
@@ -28,7 +31,7 @@
 			?>
 				<form action="mission-type.php" method="post" id="mission-type-form" enctype="multipart/form-data" class="was-validated" novalidate>
 					<div class="g-3 row">
-						<?php missionTypeForm($missionType); ?>
+						<?php MissionType::getMissionTypeForm($missionType); ?>
 					</div>
 					<div class="g-3 row">
 						<div class="col-12">
@@ -38,7 +41,7 @@
 					
 				</form>
 			</div>
-	<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/scripts-include.php' ?>
+	<?php include_once __DIR__.'/../php/scripts-include.php' ?>
 	</body>
 </html>
 

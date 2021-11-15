@@ -1,5 +1,4 @@
-<body>
-	<div id="container">
+    <div id="container">
 		<header id="site-header">
 			<div class="odd-logo col-lg-1"></div>
 			<div class="odd-title col-lg-11"><?php echo $siteTitle; ?></div>
