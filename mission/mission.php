@@ -1,209 +1,163 @@
-<?php include_once '/home/joshch9/project/adminInclude.php' ?>
 <?php
+use XCOMDatabank\Missions\Mission;
+use XCOMDatabank\Missions\MissionAlien;
+use XCOMDatabank\Missions\MissionSitrep;
+use XCOMDatabank\Missions\MissionSoldier;
+use XCOMDatabank\Missions\MissionStatus;
 
-	$mission = new Mission();
-	$missionFields = [];
-	
-	if(!empty($_POST)) {
-		$missionData = $_POST;
+include_once __DIR__.'../../project/adminInclude.php';
 
-		$missionFields['objective_id'] = $missionData['objective_id'];
-		if(isset($missionData['dark_event_id'])) {
-			$missionFields['dark_event_id'] = $missionData['dark_event_id'];
-		}
-		
-		if(isset($missionData['chosen_id'])) {
-			$missionFields['chosen_id'] = $missionData['chosen_id'];
-		}
-		
-		if(isset($missionData['episode'])) {
-			$missionFields['episode'] = $missionData['episode'];
-		}
-		
-		if(isset($missionData['url'])) {
-			$missionFields['url'] = $missionData['url'];
-		}
-		
-		if(isset($missionData['location'])) {
-			$missionFields['location'] = $missionData['location'];
-		}
-		
-		$missionFields['sector'] = $missionData['sector'];
-		
-		if(isset($missionData['mission_date'])) {
-			$missionFields['mission_date'] = $missionData['mission_date'];
-		}
-		
-		$missionFields['operation_name'] = $missionData['operation_name'];
-		$missionFields['reward'] = $missionData['reward'];
-		$missionFields['difficulty'] = $missionData['difficulty'];
-		
-		if(isset($missionData['chosen_result'])) {
-			$missionFields['chosen_result'] = $missionData['chosen_result'];
-		}
-		
-		if(isset($missionData['rating'])) {
-			$missionFields['rating'] = $missionData['rating'];
-		}
-		
-		$missionFields['complete'] = $missionData['complete'];
-		
-		if(isset($missionData['turns'])) {
-			$missionFields['turns'] = $missionData['turns'];
-		}
-		
-		if(isset($missionData['is_chain'])) {
-			$missionFields['is_chain'] = $missionData['is_chain'];
-		}
-		
-		if(isset($missionData['is_infiltration'])) {
-			$missionFields['is_infiltration'] = $missionData['is_infiltration'];
-		}
-		if(isset($missionData['infiltration'])) {
-			$missionFields['infiltration'] = $missionData['infiltration'];
-		}
-		
-		if(isset($_POST['id'])) {
-			if(is_numeric($_POST['id'])) {
-				if(isset($_POST['deleted'])) {
-					if(!empty($_FILES)) {
-						$missionFields['picture'] = $_FILES["picture"];
-					}
-					else {
-						$missionFields['picture'] = null;
-					}
-				}
-				else {
-					if(!empty($missionData['currentphoto'])) {
-						$missionFields['picture'] = $soldierData['currentphoto'];
-					}
-					elseif(!empty($_FILES)) {
-						$missionFields['picture'] = $_FILES["picture"];
-					}
-					else {
-						$missionFields['picture'] = null;
-					}
-				}
-				
-				$missionFields['id'] = $missionData['id'];
-				$mission->editMission($missionFields);
-			}
-		}
-		else {
-			if(!empty($_FILES)) {
-				$missionFields['picture'] = $_FILES["picture"];
-			}
-			$mission->newMission($missionFields);
-		}
-		
-		// Get the mission ID
-		$missionID = $mission->id;
-		
-		// If Infiltration is set and less than 100, then don't set the sitrep or aliens
-		if(!isset($missionData['infiltration']) ? true : ( ($missionData['infiltration'] < 100) ? false : true )) {
-			// Set MissionSitrep
-			if(isset($missionData['sitrep'])) {
-				$sitrepCount = sizeof($missionData['sitrep']);
-				
-				for( $i = 0; $i < $sitrepCount; $i++ ) {
-					$missionSitrep = new MissionSitrep;
-					
-					$MSRArray['mission_id'] = $missionID;
-					$MSRArray['sitrep_id'] = $missionData['sitrep'][$i];
-					if(isset($missionData['MSRid'])) {
-						$MSRArray['id'] = $missionData['MSRid'][$i];
-					}
-					
-					if(isset($missionData['MSRid'][$i]) and is_numeric($missionData['MSRid'][$i])) {
-						$missionSitrep->editMissionSitrep($MSRArray);
-					}
-					else {
-						$missionSitrep->newMissionSitrep($MSRArray);
-					}
-				}
-			}
-			
-			// Get total number of alien entries on Mission
-			$alienCount = sizeof($missionData['alien_id']);
-			
-			for( $i = 0; $i < $alienCount; $i++ ) {
-				$missionAlien = new MissionAlien();
-				
-				$MAArray['mission_id'] = $missionID;
-				$MAArray['alien_id'] = $missionData['alien_id'][$i];
-				$MAArray['encountered'] = $missionData['encountered'][$i];
-				$MAArray['killed'] = $missionData['killed'][$i];
-				if(isset($missionData['MAid'])) {
-					$MAArray['id'] = $missionData['MAid'][$i];
-				}
-				
-				if(isset($missionData['MAid'][$i]) and is_numeric($missionData['MAid'][$i])) {
-					$missionAlien->editMissionAlien($MAArray);
-				}
-				else {
-					$missionAlien->newMissionAlien($MAArray);
-				}
-			}
-		}
-		
-		// Get total Number of Solders on Mission
-		$soldierCount = sizeof($missionData['soldier_id']);
-		
-		for( $i = 0; $i < $soldierCount; $i++ ) {
-			$missionSoldier = new SoldierMission();
-			
-			$MSArray['mission_id'] = $missionID;
-			$MSArray['soldier_id'] = $missionData['soldier_id'][$i];
-			$MSArray['rank_id'] = $missionData['rank_id'][$i];
-			$MSArray['class_id'] = $missionData['class_id'][$i];
-			$MSArray['shots_hit'] = $missionData['shots_hit'][$i];
-			$MSArray['shots_taken'] = $missionData['shots_taken'][$i];
-			$MSArray['overwatch_hit'] = $missionData['overwatch_hit'][$i];
-			$MSArray['overwatch_taken'] = $missionData['overwatch_taken'][$i];
-			$MSArray['melee_hit'] = $missionData['melee_hit'][$i];
-			$MSArray['melee_taken'] = $missionData['melee_taken'][$i];
-			$MSArray['damage'] = $missionData['damage'][$i];
-			$MSArray['killed_aliens'] = $missionData['killed_aliens'][$i];
-			$MSArray['killed_lost'] = $missionData['killed_lost'][$i];
-			$MSArray['mvp'] = $missionData['mvp'][$i];
-			$MSArray['status'] = $missionData['status'][$i];
-			$MSArray['status_time'] = $missionData['status_time'][$i];
-			$MSArray['extra'] = $missionData['extra'][$i];
-			$MSArray['extra_info'] = $missionData['extra_info'][$i];
-			$MSArray['promoted'] = $missionData['promoted'][$i];
-			if(isset($missionData['MSid'][$i])) {
-				$MSArray['id'] = $missionData['MSid'][$i];
-			}
-			
-			if(isset($missionData['MSid'][$i]) and is_numeric($missionData['MSid'][$i])) {
-				$missionSoldier->editSoldierMission($MSArray);
-			}
-			else {
-				$missionSoldier->newSoldierMission($MSArray);
-			}
-		}
+$errorMsg = "";
+$mission = new Mission();
+$missionFields = [];
 
+if(!empty($_POST)) {
+    $missionData = $_POST;
+
+    // Collect and Submit Mission Information
+    $missionFields['objective_id'] = $missionData['objective_id'];
+    $missionFields['dark_event_id'] = $missionData['dark_event_id'] ?? null;
+    $missionFields['chosen_id'] = $missionData['chosen_id'] ?? null;
+	$missionFields['episode'] = $missionData['episode'] ?? array();
+    $missionFields['url'] = $missionData['url'] ?? array();
+    $missionFields['sector'] = $missionData['sector'];
+	$missionFields['location'] = $missionData['location'] ?? $missionFields['sector'];
+	$missionFields['mission_date'] = $missionData['mission_date'] ?? $mission->missionDate;
+	$missionFields['operation_name'] = $missionData['operation_name'];
+    $missionFields['reward'] = $missionData['reward'];
+    $missionFields['difficulty'] = $missionData['difficulty'];
+    $missionFields['chosen_result'] = $missionData['chosen_result'] ?? null;
+    $missionFields['rating'] = $missionData['rating'];
+	$missionFields['status'] = $missionData['status'];
+    $missionFields['turns'] = $missionData['turns'] ?? 1;
+    $missionFields['is_chain'] = $missionData['is_chain'];
+    $missionFields['is_infiltration'] = $missionData['is_infiltration'];
+    $missionFields['infiltration'] = $missionData['infiltration'] ?? null;
+    $missionFields['picture'] = $_FILES["picture"] ?? null;
+    $missionFields['deleted'] = $missionData["deleted"] ?? null;
+
+    $errorMsg = $mission->processForm($missionFields);
+		
+    // Get the mission ID
+    $missionID = $mission->id;
+
+    // Collect and Submit SITREP Information
+    if(!empty($missionData['sitrep'])) {
+        foreach($missionData['sitrep'] as $item) {
+            $sitrep = new MissionSitrep;
+            $sitrepFields['mission_id'] = $missionID;
+            $sitrepFields['sitrep_id'] = $item;
+            $errorMsg .= $sitrep->processForm($sitrepFields);
+        }
+    }
+
+    // Collect and Submit Soldier Information
+    for( $i = 0; $i < sizeof($missionData['soldier_id']); $i++ ) {
+        $missionSoldier = new MissionSoldier();
+
+        $soldierFields['mission_id'] = $missionID;
+        $soldierFields['soldier_id'] = $missionData['soldier_id'][$i];
+        $soldierFields['rank_id'] = $missionData['rank_id'][$i];
+        $soldierFields['class_id'] = $missionData['class_id'][$i];
+        $soldierFields['shots_hit'] = $missionData['shots_hit'][$i];
+        $soldierFields['shots_taken'] = $missionData['shots_taken'][$i];
+        $soldierFields['overwatch_hit'] = $missionData['overwatch_hit'][$i];
+        $soldierFields['overwatch_taken'] = $missionData['overwatch_taken'][$i];
+        $soldierFields['melee_hit'] = $missionData['melee_hit'][$i];
+        $soldierFields['melee_taken'] = $missionData['melee_taken'][$i];
+        $soldierFields['damage'] = $missionData['damage'][$i];
+        $soldierFields['healing'] = $missionData['healing'][$i];
+        $soldierFields['killed_aliens'] = $missionData['killed_aliens'][$i];
+        $soldierFields['killed_lost'] = $missionData['killed_lost'][$i];
+        $soldierFields['mvp'] = $missionData['mvp'][$i];
+        $soldierFields['status'] = $missionData['status'][$i];
+        $soldierFields['extra'] = $missionData['extra'][$i];
+        $soldierFields['extra_info'] = $missionData['extra_info'][$i];
+        $soldierFields['promoted'] = $missionData['promoted'][$i];
+        if(isset($missionData['MSid'][$i])) {
+            $soldierFields['id'] = $missionData['MSid'][$i];
+        }
+
+        $errorMsg .= $missionSoldier->processForm($soldierFields);
+    }
+
+    // Collect and Submit Alien Information
+    // If Mission Status is not Infiltrating, collect Alien Data
+    if(MissionStatus::getStatusByID($mission->status) != "Infiltrating") {
+        for( $i = 0; $i < sizeof($missionData['alien_id']); $i++ ) {
+            $missionAlien = new MissionAlien();
+
+            $alienFields['mission_id'] = $missionID;
+            $alienFields['alien_id'] = $missionData['alien_id'][$i];
+            $alienFields['encountered'] = $missionData['encountered'][$i];
+            $alienFields['killed'] = $missionData['killed'][$i];
+            if(isset($missionData['MAid'])) {
+                $alienFields['id'] = $missionData['MAid'][$i];
+            }
+
+            $errorMsg .= $missionAlien->processForm($alienFields);
+        }
+    }
+
+    if($errorMsg != "") {
 		header('Location: /mission/mission-list.php');
 	}
-	else {
-		if(isset($_GET['id']) and is_numeric($_GET['id'])) {
-			$missionID = $_GET['id'];
-			$mission->getMission($missionID);
-		} ?>
+}
+else {
+?>
 
-<!DOCTYPE html>
-<html lang="en">
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/header-include.php' ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
-			<div id="main" class="controls input-group">
-				<form action="mission.php" method="post" id="mission-form" enctype="multipart/form-data" class="was-validated g-3 row" novalidate>
-					<?php missionForm($mission); ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php include_once __DIR__.'/../php/header-include.php' ?>
+    <body>
+    <?php include_once __DIR__.'/../php/page-head.php' ?>
+    <div id="main" class="controls input-group">
+        <h2 class="list-header">Add/Edit Mission</h2>
+        <?php
+        if($errorMsg != "") {
+            ?>
+            <p class="text-danger"><strong><?php echo $errorMsg; ?></strong></p>
+            <?php
+        }
+        ?>
+        <form action="mission.php" method="post" id="mission-form" enctype="multipart/form-data" class="was-validated" novalidate>
+            <div class="g-3 row">
+                <?php Mission::getMissionForm($mission); ?>
+            </div>
+
+            <h2>Rewards</h2>
+            <div class="mission-info row repeat-parent">
+                <div class="reward-field field-repeat entry col-md-3 pb-2 input-group-append">
+                    <div class="row gx-2">
+                        <?php Mission::getMissionRewards('', true); ?>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Soldiers</h2>
+            <div class="repeat-parent col-12">
+                <div class="field-repeat mission-info row gx-0 gy-3">
+                    <?php MissionSoldier::getMissionSoldierForm(null, true, true); ?>
+                </div>
+            </div>
+
+            <h2>Aliens</h2>
+            <div class="repeat-parent col-12">
+                <div class="field-repeat mission-info row gx-0 gy-3">
+                    <?php MissionAlien::getMissionAlienForm(null, true, true); ?>
+                </div>
+            </div>
+
+            <h2>Mission Picture</h2>
+            <div class="g-3 row">
+                <?php Mission::getMissionPicture(null); ?>
+            </div>
+
 					
-					<input type="submit" value="Submit" class="submit"> <input type="reset">
-					
-				</form>
-			</div>
-	<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/scripts-include.php' ?>
+            <input type="submit" value="Submit" class="submit"> <input type="reset">
+        </form>
+    </div>
+    <?php include_once __DIR__.'/../php/scripts-include.php' ?>
 	</body>
 </html>
 
