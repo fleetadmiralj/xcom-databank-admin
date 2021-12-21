@@ -1,17 +1,17 @@
 <?php
-use XCOMDatabank\Management\Info;
+use XCOMDatabank\Management\Research;
 
 include_once __DIR__ . '../../project/adminInclude.php';
 
 $errorMsg = "";
-$info = new Info();
+$research = new Research();
 if(!empty($_POST)) {
-    $errorMsg = $info->processForm($_POST, '/management/info-list.php');
+    $errorMsg = $research->processForm($_POST, '/management/research-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
-        $infoID = $_GET['id'];
-        $info->getInfo($infoID);
+        $researchID = $_GET['id'];
+        $research->getResearch($researchID);
     }
     ?>
 
@@ -21,7 +21,7 @@ else {
     <body>
     <?php include_once __DIR__ . '/../php/page-head.php' ?>
     <div id="main" class="controls input-group">
-        <h2 class="list-header">Add/Edit Info</h2>
+        <h2 class="list-header">Add/Edit Research</h2>
         <?php
         if($errorMsg != "") {
             ?>
@@ -29,9 +29,9 @@ else {
             <?php
         }
         ?>
-        <form action="info.php" method="post" id="info-form" enctype="multipart/form-data" class="was-validated" novalidate>
+        <form action="research.php" method="post" id="research-form" enctype="multipart/form-data" class="was-validated" novalidate>
             <div class="g-3 row">
-                <?php Info::getInfoForm($info); ?>
+                <?php Research::getResearchForm($research); ?>
             </div>
             <div class="g-3 row">
                 <div class="col-12">
