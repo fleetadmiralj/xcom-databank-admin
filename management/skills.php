@@ -1,56 +1,50 @@
-<?php include_once '/home/joshch9/project/adminInclude.php' ?>
 <?php
+use XCOMDatabank\Management\Skill;
 
-	$skill = new Skill();
-	
-	if(!empty($_POST)) {
-		$skillData = $_POST;
-		if(is_numeric($_POST['id'])) {
-			if(isset($_POST['deleted'])) {
-				if($_POST['deleted'] == 1) {
-					$skillData['icon'] = testImage($_FILES["icon"], 'skill', $skillData['name'], "Skill Image Upload");
-				}
-				else {
-					$skillData['icon'] = null;
-				}
-			}
-			else {
-				$skillData['icon'] = null;
-			}
-			
-			$skill->editSkill($skillData);
-		}
-		else {
-			if(!empty($_FILES)) {
-				$skillData['icon'] = testImage($_FILES["icon"], 'skill', $skillData['name'], "Skill Image Upload");
-			}
-			$skill->newSkill($skillData);
-		}
-		createClassJson();
-		header('Location: /management/skills-list.php');
-	}
-	else {
-		if(isset($_GET['id']) and is_numeric($_GET['id'])) {
-			$skillID = $_GET['id'];
-			$skill->getSkill($skillID);
-		} ?>
+include_once __DIR__ . '../../project/adminInclude.php';
 
-<!DOCTYPE html>
-<html lang="en">
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/header-include.php' ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
-			<div id="main" class="controls input-group">
-				<form action="skills.php" method="post" id="skill-form" enctype="multipart/form-data">
-					<?php skillForm($skill); ?>
-					
-					<input type="submit" value="Submit" class="submit"> <input type="reset">
-					
-				</form>
-			</div>
-	<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/scripts-include.php' ?>
-	</body>
-</html>
+$errorMsg = "";
+$skill = new Skill();
+if(!empty($_POST)) {
+    $errorMsg = $skill->processForm($_POST, '/management/skills-list.php');
+}
+else {
+    if(isset($_GET['id']) and is_numeric($_GET['id'])) {
+        $skillID = $_GET['id'];
+        $skill->getSkill($skillID);
+    }
+    ?>
 
-<?php		
-	}	
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php include_once __DIR__ . '/../php/header-include.php' ?>
+    <body>
+    <?php include_once __DIR__ . '/../php/page-head.php' ?>
+    <div id="main" class="controls input-group">
+        <h2 class="list-header">Add/Edit Skill</h2>
+        <?php
+        if($errorMsg != "") {
+            ?>
+            <p class="text-danger"><strong><?php echo $errorMsg; ?></strong></p>
+            <?php
+        }
+        ?>
+        <form action="skills.php" method="post" id="skill-form" enctype="multipart/form-data" class="was-validated" novalidate>
+            <div class="g-3 row">
+                <?php Skill::getSkillForm($skill); ?>
+            </div>
+            <div class="g-3 row">
+                <div class="col-12">
+                    <button type="submit" id="submit" class="submit btn btn-primary">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <?php include_once __DIR__ . '/../php/scripts-include.php' ?>
+    </body>
+    </html>
+
+    <?php
+}
 ?>

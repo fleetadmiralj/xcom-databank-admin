@@ -1,41 +1,50 @@
-<?php include_once '/home/joshch9/project/adminInclude.php' ?>
 <?php
+use XCOMDatabank\Management\ClassRank;
 
-	$classRank = new ClassRank();
-	
-	if(!empty($_POST)) {
-		$classRankData = $_POST;
-		if(is_numeric($_POST['id'])) {
-			$classRank->editClassRank($classRankData);
-		}
-		else {
-			$classRank->newClassRank($classRankData);
-		}
-		createClassJson();
-		header('Location: /management/class-rank-list.php');
-	}
-	else {
-		if(isset($_GET['id']) and is_numeric($_GET['id'])) {
-			$classRankID = $_GET['id'];
-			$classRank->getClassRank($classRankID);
-		} ?>
+include_once __DIR__ . '../../project/adminInclude.php';
 
-<!DOCTYPE html>
-<html lang="en">
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/header-include.php' ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
-			<div id="main" class="controls input-group">
-				<form action="class-rank.php" method="post" id="class-rank-form">
-					<?php classRankForm($classRank); ?>
-					
-					<input type="submit" value="Submit" class="submit"> <input type="reset">
-					
-				</form>
-			</div>
-	<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/scripts-include.php' ?>
-	</body>
-</html>
+$errorMsg = "";
+$classRank = new ClassRank();
+if(!empty($_POST)) {
+    $errorMsg = $classRank->processForm($_POST, '/management/class-rank-list.php');
+}
+else {
+    if(isset($_GET['id']) and is_numeric($_GET['id'])) {
+        $classRankID = $_GET['id'];
+        $classRank->getClassRank($classRankID);
+    }
+    ?>
 
-<?php		
-	}	
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php include_once __DIR__ . '/../php/header-include.php' ?>
+    <body>
+    <?php include_once __DIR__ . '/../php/page-head.php' ?>
+    <div id="main" class="controls input-group">
+        <h2 class="list-header">Add/Edit Class/Rank</h2>
+        <?php
+        if($errorMsg != "") {
+            ?>
+            <p class="text-danger"><strong><?php echo $errorMsg; ?></strong></p>
+            <?php
+        }
+        ?>
+        <form action="class-rank.php" method="post" id="class-rank-form" enctype="multipart/form-data" class="was-validated" novalidate>
+            <div class="g-3 row">
+                <?php ClassRank::getClassRankForm($classRank); ?>
+            </div>
+            <div class="g-3 row">
+                <div class="col-12">
+                    <button type="submit" id="submit" class="submit btn btn-primary">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <?php include_once __DIR__ . '/../php/scripts-include.php' ?>
+    </body>
+    </html>
+
+    <?php
+}
 ?>
