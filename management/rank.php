@@ -1,7 +1,7 @@
 <?php
 use XCOMDatabank\Management\Rank;
 
-include_once __DIR__ . '../../project/adminInclude.php';
+include_once __DIR__ . '/../../project/adminInclude.php';
 
 $errorMsg = "";
 $rank = new Rank();

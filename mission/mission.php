@@ -5,7 +5,7 @@ use XCOMDatabank\Missions\MissionSitrep;
 use XCOMDatabank\Missions\MissionSoldier;
 use XCOMDatabank\Missions\MissionStatus;
 
-include_once __DIR__.'../../project/adminInclude.php';
+include_once __DIR__.'/../../project/adminInclude.php';
 
 $errorMsg = "";
 $mission = new Mission();

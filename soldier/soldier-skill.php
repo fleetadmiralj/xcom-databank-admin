@@ -1,7 +1,7 @@
 <?php
 use XCOMDatabank\Soldiers\SoldierSkill;
 
-include_once __DIR__ . '../../project/adminInclude.php';
+include_once __DIR__ . '/../../project/adminInclude.php';
 
 $errorMsg = "";
 $soldierSkill = new SoldierSkill();

@@ -1,7 +1,7 @@
 <?php
 use XCOMDatabank\Soldiers\Bonds;
 
-include_once __DIR__ . '../../project/adminInclude.php';
+include_once __DIR__ . '/../../project/adminInclude.php';
 
 $errorMsg = "";
 $bond = new Bonds();

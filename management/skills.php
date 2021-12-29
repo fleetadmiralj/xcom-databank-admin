@@ -1,7 +1,7 @@
 <?php
 use XCOMDatabank\Management\Skill;
 
-include_once __DIR__ . '../../project/adminInclude.php';
+include_once __DIR__ . '/../../project/adminInclude.php';
 
 $errorMsg = "";
 $skill = new Skill();

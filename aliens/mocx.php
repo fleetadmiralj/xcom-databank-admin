@@ -1,7 +1,7 @@
 <?php
 use XCOMDatabank\Aliens\MOCX;
 
-include_once __DIR__ . '../../project/adminInclude.php';
+include_once __DIR__ . '/../../project/adminInclude.php';
 
 $errorMsg = "";
 $mocx = new MOCX();

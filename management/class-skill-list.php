@@ -1,7 +1,7 @@
 <?php
 use XCOMDatabank\Management\ClassSkill;
 
-include_once __DIR__.'../../project/adminInclude.php'; ?>
+include_once __DIR__.'/../../project/adminInclude.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

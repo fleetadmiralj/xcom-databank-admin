@@ -1,7 +1,7 @@
 <?php
 use XCOMDatabank\Management\ClassRank;
 
-include_once __DIR__ . '../../project/adminInclude.php';
+include_once __DIR__ . '/../../project/adminInclude.php';
 
 $errorMsg = "";
 $classRank = new ClassRank();

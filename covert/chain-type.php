@@ -1,7 +1,7 @@
 <?php
 use XCOMDatabank\Covert\ActivityChainType;
 
-include_once __DIR__ . '../../project/adminInclude.php';
+include_once __DIR__ . '/../../project/adminInclude.php';
 
 $errorMsg = "";
 $chainType = new ActivityChainType();

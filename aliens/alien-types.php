@@ -1,7 +1,7 @@
 <?php
 use XCOMDatabank\Aliens\AlienType;
 
-include_once __DIR__ . '../../project/adminInclude.php';
+include_once __DIR__ . '/../../project/adminInclude.php';
 
 $errorMsg = "";
 $alienType = new AlienType();

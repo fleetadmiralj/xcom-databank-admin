@@ -2,7 +2,7 @@
 use XCOMDatabank\Covert\CovertAction;
 use XCOMDatabank\Covert\CovertOperative;
 
-include_once __DIR__.'../../project/adminInclude.php';
+include_once __DIR__.'/../../project/adminInclude.php';
 
 $errorMsg = "";
 $action = new CovertAction();

@@ -2,7 +2,7 @@
 use XCOMDatabank\Covert\ActivityChain;
 use XCOMDatabank\Covert\ActivityChainStep;
 
-include_once __DIR__.'../../project/adminInclude.php';
+include_once __DIR__.'/../../project/adminInclude.php';
 
 $errorMsg = "";
 $chain = new ActivityChain();
