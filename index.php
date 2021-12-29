@@ -39,8 +39,8 @@ include_once __DIR__.'/../project/adminInclude.php'; ?>
                     </div>
                     <div class="row">
                         <div class="col-5"><strong>Mission SITREPs</strong></div>
-                        <div class="col-2"><a href="mission/sitrep-list.php">List</a></div>
-                        <div class="col-2"><a href="mission/sitrep.php">Add</a></div>
+                        <div class="col-2"><a href="mission/mission-sitrep-list.php">List</a></div>
+                        <div class="col-2"><a href="mission/mission-sitrep.php">Add</a></div>
                     </div>
                 </div>
                 <div class="col-6 index-section">
