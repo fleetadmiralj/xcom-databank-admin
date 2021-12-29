@@ -1,7 +1,7 @@
 <?php
 use XCOMDataBank\Utility\User;
 
-include_once __DIR__.'../project/adminInclude.php';
+include_once __DIR__.'/../project/adminInclude.php';
 
 $user = new User;
 $userinfo = [];
