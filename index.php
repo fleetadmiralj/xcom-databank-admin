@@ -14,6 +14,7 @@ include_once __DIR__.'/../project/adminInclude.php'; ?>
                     <div class="row">
                         <div class="col-5"><strong>Missions</strong></div>
                         <div class="col-2"><a href="mission/mission-list.php">List</a></div>
+                        <div class="col-2"><a href="mission/mission-only.php">Only</a></div>
                         <div class="col-2"><a href="mission/mission.php">Add</a></div>
                     </div>
                     <div class="row">
@@ -23,8 +24,8 @@ include_once __DIR__.'/../project/adminInclude.php'; ?>
                     </div>
                     <div class="row">
                         <div class="col-5"><strong>Mission Aliens</strong></div>
-                        <div class="col-2"></div>
-                        <div class="col-2"></div>
+                        <div class="col-2"><a href="mission/mission-alien-list.php">List</a></div>
+                        <div class="col-2"><a href="mission/mission-alien.php">Add</a></div>
                     </div>
                     <div class="row">
                         <div class="col-5"><strong>Mission Types</strong></div>
@@ -36,6 +37,11 @@ include_once __DIR__.'/../project/adminInclude.php'; ?>
                         <div class="col-2"><a href="mission/objective-list.php">List</a></div>
                         <div class="col-2"><a href="mission/objective.php">Add</a></div>
                     </div>
+                    <div class="row">
+                        <div class="col-5"><strong>Mission SITREPs</strong></div>
+                        <div class="col-2"><a href="mission/sitrep-list.php">List</a></div>
+                        <div class="col-2"><a href="mission/sitrep.php">Add</a></div>
+                    </div>
                 </div>
                 <div class="col-6 index-section">
                     <h2>Covert Infiltration</h2>
@@ -43,11 +49,6 @@ include_once __DIR__.'/../project/adminInclude.php'; ?>
                         <div class="col-5"><strong>Covert Actions</strong></div>
                         <div class="col-2"><a href="covert/covert-list.php">List</a></div>
                         <div class="col-2"><a href="covert/covert.php">Add</a></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-5"><strong>Covert Action Operative</strong></div>
-                        <div class="col-2"></div>
-                        <div class="col-2"></div>
                     </div>
                     <div class="row">
                         <div class="col-5"><strong>Covert Action Types</strong></div>
@@ -61,8 +62,8 @@ include_once __DIR__.'/../project/adminInclude.php'; ?>
                     </div>
                     <div class="row">
                         <div class="col-5"><strong>Activity Chain Type</strong></div>
-                        <div class="col-2"></div>
-                        <div class="col-2"></div>
+                        <div class="col-2"><a href="covert/chain-type-list.php">List</a></div>
+                        <div class="col-2"><a href="covert/chain-type.php">Add</a></div>
                     </div>
                 </div>
             </div>
@@ -82,8 +83,8 @@ include_once __DIR__.'/../project/adminInclude.php'; ?>
                     </div>
 					<div class="row">
                         <div class="col-5"><strong>Soldier Skills</strong></div>
-                        <div class="col-2"></div>
-                        <div class="col-2"></div>
+                        <div class="col-2"><a href="soldier/soldier-skill-list.php">List</a></div>
+                        <div class="col-2"><a href="soldier/soldier-skill.php">Add</a></div>
                     </div>
                 </div>
                 <div class="col-6 index-section">
@@ -97,6 +98,16 @@ include_once __DIR__.'/../project/adminInclude.php'; ?>
                         <div class="col-5"><strong>Alien Units</strong></div>
                         <div class="col-2"><a href="aliens/aliens-list.php">List</a></div>
                         <div class="col-2"><a href="aliens/aliens.php">Add</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><strong>MOCX</strong></div>
+                        <div class="col-2"><a href="aliens/mocx-list.php">List</a></div>
+                        <div class="col-2"><a href="aliens/mocx.php">Add</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><strong>MOCX Missions</strong></div>
+                        <div class="col-2"><a href="aliens/mocx-mission-list.php">List</a></div>
+                        <div class="col-2"><a href="aliens/mocx-mission.php">Add</a></div>
                     </div>
                     <div class="row">
                         <div class="col-5"><strong>Chosen</strong></div>
@@ -170,6 +181,16 @@ include_once __DIR__.'/../project/adminInclude.php'; ?>
                         <div class="col-5"><strong>SITREPs</strong></div>
                         <div class="col-2"><a href="management/sitrep-list.php">List</a></div>
                         <div class="col-2"><a href="management/sitrep.php">Add</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><strong>Status</strong></div>
+                        <div class="col-2"><a href="mission/mission-status-list.php">List</a></div>
+                        <div class="col-2"><a href="mission/mission-status.php">Add</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"><strong>Status Extra</strong></div>
+                        <div class="col-2"><a href="mission/extra-list.php">List</a></div>
+                        <div class="col-2"><a href="mission/extra.php">Add</a></div>
                     </div>
                 </div>
             </div>
