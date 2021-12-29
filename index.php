@@ -56,8 +56,8 @@ include_once __DIR__.'../project/adminInclude.php'; ?>
                     </div>
                     <div class="row">
                         <div class="col-5"><strong>Activity Chains</strong></div>
-                        <div class="col-2"><a href="mission/chain-list.php">List</a></div>
-                        <div class="col-2"><a href="mission/chain.php">Add</a></div>
+                        <div class="col-2"><a href="covert/chain-list.php">List</a></div>
+                        <div class="col-2"><a href="covert/chain.php">Add</a></div>
                     </div>
                     <div class="row">
                         <div class="col-5"><strong>Activity Chain Type</strong></div>

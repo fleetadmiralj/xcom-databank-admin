@@ -1,44 +1,50 @@
-<?php include_once '/home/joshch9/project/adminInclude.php' ?>
 <?php
+use XCOMDatabank\Covert\CovertType;
 
-	$covertType = new CovertType();
-	
-	if(!empty($_POST)) {
-		$covertTypeData = $_POST;
-		
-		if(isset($_POST['id'])) {
-			if(is_numeric($_POST['id'])) {
-				$covertType->editCovertType($covertTypeData);
-			}
-		}
-		else {
-			$covertType->newCovertType($covertTypeData);
-		}
-		createCovertJson();
-		header('Location: /covert/covert-type-list.php');
-	}
-	else {
-		if(isset($_GET['id']) and is_numeric($_GET['id'])) {
-			$covertTypeID = $_GET['id'];
-			$covertType->getCovertType($covertTypeID);
-		} ?>
+include_once __DIR__ . '../../project/adminInclude.php';
 
-<!DOCTYPE html>
-<html lang="en">
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/header-include.php' ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/page-head.php' ?>
-			<div id="main" class="controls input-group">
-				<form action="covert-type.php" method="post" id="covert-type">
-					<?php covertTypeForm($covertType); ?>
-					
-					<input type="submit" value="Submit" class="submit"> <input type="reset">
-					
-				</form>
-			</div>
-	<?php include_once $_SERVER['DOCUMENT_ROOT'].'/php/scripts-include.php' ?>
-	</body>
-</html>
+$errorMsg = "";
+$covertType = new CovertType();
+if(!empty($_POST)) {
+    $errorMsg = $covertType->processForm($_POST, '/covert/covert-type-list.php');
+}
+else {
+    if(isset($_GET['id']) and is_numeric($_GET['id'])) {
+        $covertTypeID = $_GET['id'];
+        $covertType->getCovertType($covertTypeID);
+    }
+    ?>
 
-<?php		
-	}	
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php include_once __DIR__ . '/../php/header-include.php' ?>
+    <body>
+    <?php include_once __DIR__ . '/../php/page-head.php' ?>
+    <div id="main" class="controls input-group">
+        <h2 class="list-header">Add/Edit Covert Type</h2>
+        <?php
+        if($errorMsg != "") {
+            ?>
+            <p class="text-danger"><strong><?php echo $errorMsg; ?></strong></p>
+            <?php
+        }
+        ?>
+        <form action="covert-type.php" method="post" id="covert-type-form" enctype="multipart/form-data" class="was-validated" novalidate>
+            <div class="g-3 row">
+                <?php CovertType::getCovertTypeForm($covertType); ?>
+            </div>
+            <div class="g-3 row">
+                <div class="col-12">
+                    <button type="submit" id="submit" class="submit btn btn-primary">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <?php include_once __DIR__ . '/../php/scripts-include.php' ?>
+    </body>
+    </html>
+
+    <?php
+}
 ?>
