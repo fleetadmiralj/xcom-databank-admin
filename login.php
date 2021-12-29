@@ -1,5 +1,5 @@
 <?php
-use XCOMDataBank\Utility\User;
+use XCOMDatabank\Utility\User;
 
 include_once __DIR__.'/../project/adminInclude.php';
 
