@@ -7,8 +7,6 @@ $errorMsg = "";
 $mission = new Mission();
 $missionFields = [];
 
-print_r($_GET);
-
 if(!empty($_POST)) {
     $errorMsg = $mission->processForm($_POST, '/mission/mission-list.php');
 }
