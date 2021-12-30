@@ -1,6 +1,7 @@
 <?php
 
-include_once __DIR__.'/../../project/adminInclude.php';
+//include_once __DIR__.'/../../project/adminInclude.php';
+echo __DIR__.'/../../project/adminInclude.php';
 
 use XCOMDatabank\Utility\Database;
 
