@@ -119,6 +119,14 @@ $(function(){
 		$.getJSON("/json/missions.php", function (dataMission) {
 			console.log("Inside mission-type change");
 			console.log(dataMission);
+			var selection = $(this).find(":selected").val();
+			console.log(selection);
+			var objective = dataMission[selection];
+			console.log(objective);
+			//$($(this).parents('.row').find('.objective')).empty();
+			//for (obj in objective) {
+			//	$("<option />").text(objective[obj]).val(obj).appendTo($(this).parents('.row').find('.objective'));
+			//}
 		});
 
 		//e.preventDefault();
