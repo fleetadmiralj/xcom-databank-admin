@@ -119,10 +119,10 @@ $(function(){
 		$.getJSON("/json/missions.php", function (dataMission) {
 			console.log("Inside mission-type change");
 			console.log(dataMission);
-			console.log($(this));
-			console.log($(this).find(":selected"));
-			console.log($(this).find(":selected").val());
-			var selection = $(this).find(":selected").val();
+			console.log($('select.mission-type'));
+			console.log($('select.mission-type').find(":selected"));
+			console.log($('select.mission-type').find(":selected").val());
+			var selection = $('select.mission-type').find(":selected").val();
 			console.log(selection);
 			var objective = dataMission[selection];
 			console.log(objective);
