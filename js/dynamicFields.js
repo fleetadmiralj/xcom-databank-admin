@@ -114,29 +114,13 @@ $(function(){
 		}
 	});
 
-	// Update Objective List based on Mission type
-	//function getMissionJSON() {
-	//	$.getJSON("/json/missions.php", function (dataMission) {
-	//		return dataMission;
-	//	});
-	//}
-
-	function getMission() {
-		var missionData;
-		return $.ajax({
-			url: "/json/missions.php",
-			dataType: 'json',
-			async: false,
-			data: missionData,
-			success: function (missionData) {
-				return missionData;
-			}
-		});
-	}
 
 	$(document).on("change", "select.mission-type", function(e) {
-		console.log("Inside mission-type change");
-		console.log(getMission());
+		$.getJSON("/json/missions.php", function (dataMission) {
+			console.log("Inside mission-type change");
+			console.log(dataMission);
+		});
+
 		//e.preventDefault();
 		//var selection = $(this).find(":selected").val();
 		//var objective = missionType[selection];
