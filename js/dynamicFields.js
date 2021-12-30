@@ -1,5 +1,5 @@
 $(function(){
-	console.log("Hello?");
+
 	// Update Soldier Ranks Available based on Class
 	var baseClass;
 	$.getJSON("/json/classes.php", function (data) {
@@ -17,7 +17,7 @@ $(function(){
 	$(document).on("change", "#is-infiltration", function(e) {
 		updateInfiltrate();
 	});
-	console.log("Step 2");
+
 	function updateClass() {
 		var selected = $('#soldier-form #soldier-class').find(":selected").val();
 		var currentClass;
@@ -80,7 +80,7 @@ $(function(){
 			$('<label />', { 'for': classSkills[key], id: key, text: classSkills[key] }).appendTo($('.skill-'+key));
 		}
 	}
-	console.log("Step 3");
+
 	function updateInfiltrate() {
 		console.log('Inside UpdateInfiltrate');
 		if($('#is-infiltration').val() == 1) {
@@ -117,7 +117,10 @@ $(function(){
 	// Update Objective List based on Mission type
 	var missionType;
 	$.getJSON("/json/missions.php", function (dataMission) {
+		console.log("Inside getJSON");
+		console.log(dataMission);
 		missionType = dataMission;
+		console.log(missionType);
 	});
 
 	console.log("Post Mission Load");
