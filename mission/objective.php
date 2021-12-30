@@ -11,7 +11,7 @@ if(!empty($_POST)) {
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
-        $objectiveID = $_GET['id'];
+        $objectiveID = intval($_GET['id']);
         $objective->getObjective($objectiveID);
     }
     ?>

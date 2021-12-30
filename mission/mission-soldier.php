@@ -11,7 +11,7 @@ if(!empty($_POST)) {
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
-        $missionSoldierID = $_GET['id'];
+        $missionSoldierID = intval($_GET['id']);
         $missionSoldier->getMissionSoldier($missionSoldierID);
     }
     ?>

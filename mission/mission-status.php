@@ -10,7 +10,7 @@ if(!empty($_POST)) {
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
-        $missionStatusID = $_GET['id'];
+        $missionStatusID = intval($_GET['id']);
         $missionStatus->getMissionStatus($missionStatusID);
     }
     ?>

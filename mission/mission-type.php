@@ -10,7 +10,7 @@ include_once __DIR__.'/../../project/adminInclude.php';
 	}
 	else {
 		if(isset($_GET['id']) and is_numeric($_GET['id'])) {
-			$missionTypeID = $_GET['id'];
+			$missionTypeID = intval($_GET['id']);
 			$missionType->getMissionType($missionTypeID);
 		}
 ?>
