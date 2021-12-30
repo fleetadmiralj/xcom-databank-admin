@@ -116,10 +116,8 @@ $(function(){
 
 	// Update Objective List based on Mission type
 	function getMissionJSON() {
-		var missionType;
 		$.getJSON("/json/missions.php", function (dataMission) {
-			missionType = dataMission;
-			return missionType;
+			return dataMission;
 		});
 	}
 
