@@ -134,11 +134,9 @@ $(function(){
 		});
 	}
 
-	console.log(getMission());
-
 	$(document).on("change", "select.mission-type", function(e) {
-		//console.log("Inside mission-type change");
-		//console.log(getMissionJSON());
+		console.log("Inside mission-type change");
+		console.log(getMission());
 		//e.preventDefault();
 		//var selection = $(this).find(":selected").val();
 		//var objective = missionType[selection];
