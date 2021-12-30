@@ -113,29 +113,27 @@ $(function(){
 			$("<option />").text(alienType[alien]).val(alien).appendTo($(this).parents('.row').find('.alien'));
 		}
 	});
-	console.log("Pre Mission Load");
+
 	// Update Objective List based on Mission type
 	function getMissionJSON() {
 		var missionType;
 		$.getJSON("/json/missions.php", function (dataMission) {
-			console.log("Inside getJSON");
 			missionType = dataMission;
 		});
 		return missionType;
 	}
-	console.log(getMissionJSON());
 
 	$(document).on("change", "select.mission-type", function(e) {
 		console.log("Inside mission-type change");
 		console.log(getMissionJSON());
-		e.preventDefault();
-		var selection = $(this).find(":selected").val();
-		var objective = missionType[selection];
-		console.log(objective);
-		$($(this).parents('.row').find('.objective')).empty();
-		for (obj in objective) {
-			$("<option />").text(objective[obj]).val(obj).appendTo($(this).parents('.row').find('.objective'));
-		}
+		//e.preventDefault();
+		//var selection = $(this).find(":selected").val();
+		//var objective = missionType[selection];
+		//console.log(objective);
+		//$($(this).parents('.row').find('.objective')).empty();
+		//for (obj in objective) {
+		//	$("<option />").text(objective[obj]).val(obj).appendTo($(this).parents('.row').find('.objective'));
+		//}
 	});
 	
 	// Update Soldier Rank and Class based on Soldier
