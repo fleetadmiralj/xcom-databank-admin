@@ -119,8 +119,8 @@ $(function(){
 		var missionType;
 		$.getJSON("/json/missions.php", function (dataMission) {
 			missionType = dataMission;
+			return missionType;
 		});
-		return missionType;
 	}
 
 	$(document).on("change", "select.mission-type", function(e) {
