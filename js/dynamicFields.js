@@ -115,21 +115,21 @@ $(function(){
 	});
 	console.log("Pre Mission Load");
 	// Update Objective List based on Mission type
-	var missionType;
-	$.getJSON("/json/missions.php", function (dataMission) {
-		console.log("Inside getJSON");
-		console.log(dataMission);
-		missionType = dataMission;
-		console.log(missionType);
-		setTimeout(function(){},1000);
-	});
-
-	console.log("Post Mission Load");
-	console.log(missionType);
+	function getMissionJSON() {
+		var missionType;
+		$.getJSON("/json/missions.php", function (dataMission) {
+			console.log("Inside getJSON");
+			console.log(dataMission);
+			missionType = dataMission;
+			console.log(missionType);
+		});
+		return missionType;
+	}
+	console.log(getMissionJSON());
 
 	$(document).on("change", "select.mission-type", function(e) {
 		console.log("Inside mission-type change");
-		console.log("missionType");
+		console.log(missionType);
 		e.preventDefault();
 		var selection = $(this).find(":selected").val();
 		var objective = missionType[selection];
