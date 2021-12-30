@@ -1,22 +1,19 @@
-<?
+<?php
 
-	include_once '/home/joshch9/project/mainInclude.php';
+include_once __DIR__.'/../../project/adminInclude.php';
+
+use XCOMDatabank\Utility\Database;
+
+$query = "SELECT * FROM xcom_covert_type WHERE enabled = true ORDER BY name";
+$params = array();
+
+$queryResult = Database::runQuery('select', $query, $params);
 		
-	$dbh = openDatabase();
-		
-	$stmt = $dbh->prepare("SELECT * FROM xcom_covert_type ORDER BY name ASC");
-	$stmt -> execute();
-		
-	$covertArray = [];
-		
-	while ($row = $stmt->fetch()) {	
-		$covertArray[$row['name']] = [];
-	}
+$covertArray = [];
+
+while ($row = $queryResult->fetch()) {
+    $covertArray[$row['name']] = [];
+}
 	
-	header('Content-Type: application/json');
-	echo json_encode($covertArray);
-		
-	$dbh = null;
-	$stmt = null;
-
-?>
+header('Content-Type: application/json');
+echo json_encode($covertArray);
