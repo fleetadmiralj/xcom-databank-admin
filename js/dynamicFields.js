@@ -120,15 +120,15 @@ $(function(){
 		missionType = dataMission;
 	});
 	
-	$(document).on("change", "select#mission-type", function(e) {
+	$(document).on("change", "select.mission-type", function(e) {
 		console.log(missionType);
 		e.preventDefault();
 		var selection = $(this).find(":selected").val();
 		var objective = missionType[selection];
 		console.log(objective);
-		$($(this).parents('.row').find('#objective')).empty();
+		$($(this).parents('.row').find('.objective')).empty();
 		for (obj in objective) {
-			$("<option />").text(objective[obj]).val(obj).appendTo($(this).parents('.row').find('#objective'));
+			$("<option />").text(objective[obj]).val(obj).appendTo($(this).parents('.row').find('.objective'));
 		}
 	});
 	
