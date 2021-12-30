@@ -127,10 +127,10 @@ $(function(){
 			url: "/json/missions.php",
 			dataType: 'json',
 			async: false,
-			data: data,
-			success: function (data) {
-				missionData = data;
-				console.log(data);
+			data: missionData,
+			success: function (missionData) {
+				console.log(missionData);
+				return missionData;
 			}
 		});
 		return missionData;
