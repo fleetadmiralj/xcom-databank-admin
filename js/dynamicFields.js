@@ -114,7 +114,7 @@ $(function(){
 		}
 	});
 
-
+	// Update Objective when Mission Type Changes
 	$(document).on("change", "select.mission-type", function() {
 		$.getJSON("/json/missions.php", function (dataMission) {
 			var selection = $('select.mission-type').find(":selected").text();
@@ -125,15 +125,6 @@ $(function(){
 				$("<option />").text(objective[obj]).val(obj).appendTo($('select.mission-type').parents('.row').find('.objective'));
 			}
 		});
-
-		//e.preventDefault();
-		//var selection = $(this).find(":selected").val();
-		//var objective = missionType[selection];
-		//console.log(objective);
-		//$($(this).parents('.row').find('.objective')).empty();
-		//for (obj in objective) {
-		//	$("<option />").text(objective[obj]).val(obj).appendTo($(this).parents('.row').find('.objective'));
-		//}
 	});
 	
 	// Update Soldier Rank and Class based on Soldier
