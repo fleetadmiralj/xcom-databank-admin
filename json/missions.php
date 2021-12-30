@@ -3,7 +3,7 @@
 //include_once __DIR__.'/../../project/adminInclude.php';
 echo __DIR__.'/../../project/adminInclude.php';
 
-use XCOMDatabank\Utility\Database;
+/* use XCOMDatabank\Utility\Database;
 
 $query = "SELECT * FROM xcom_mission_type WHERE enabled = true ORDER BY description";
 $params = array();
@@ -27,4 +27,4 @@ while ($row = $queryResult->fetch()) {
 }
 
 header('Content-Type: application/json');
-echo json_encode($missionArray);
+echo json_encode($missionArray); */
