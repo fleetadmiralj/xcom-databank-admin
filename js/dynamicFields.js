@@ -17,7 +17,7 @@ $(function(){
 	$(document).on("change", "#is-infiltration", function(e) {
 		updateInfiltrate();
 	});
-	
+	console.log("Step 2");
 	function updateClass() {
 		var selected = $('#soldier-form #soldier-class').find(":selected").val();
 		var currentClass;
@@ -80,7 +80,7 @@ $(function(){
 			$('<label />', { 'for': classSkills[key], id: key, text: classSkills[key] }).appendTo($('.skill-'+key));
 		}
 	}
-	
+	console.log("Step 3");
 	function updateInfiltrate() {
 		console.log('Inside UpdateInfiltrate');
 		if($('#is-infiltration').val() == 1) {
@@ -113,15 +113,18 @@ $(function(){
 			$("<option />").text(alienType[alien]).val(alien).appendTo($(this).parents('.row').find('.alien'));
 		}
 	});
-	
+	console.log("Pre Mission Load");
 	// Update Objective List based on Mission type
 	var missionType;
 	$.getJSON("/json/missions.php", function (dataMission) {
 		missionType = dataMission;
 	});
-	
+
+	console.log("Post Mission Load");
+	console.log(missionType);
+
 	$(document).on("change", "select.mission-type", function(e) {
-		console.log(missionType);
+		console.log("Inside mission-type change");
 		e.preventDefault();
 		var selection = $(this).find(":selected").val();
 		var objective = missionType[selection];
