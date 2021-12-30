@@ -22,7 +22,7 @@ else {
     <body>
         <?php include_once __DIR__.'/../php/page-head.php' ?>
 			<div id="main" class="controls input-group">
-                <h2 class="list-header">Add/Edit Mission Type</h2>
+                <h2 class="list-header">Add/Edit Objective</h2>
                 <?php
                 if($errorMsg != "") {
                     ?>
