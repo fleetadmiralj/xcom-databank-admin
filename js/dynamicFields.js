@@ -1,5 +1,5 @@
 $(function(){
-	
+	console.log("Hello?");
 	// Update Soldier Ranks Available based on Class
 	var baseClass;
 	$.getJSON("/json/classes.php", function (data) {
