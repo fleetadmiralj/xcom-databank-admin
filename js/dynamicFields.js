@@ -123,17 +123,15 @@ $(function(){
 
 	function getMission() {
 		var missionData;
-		$.ajax({
+		return $.ajax({
 			url: "/json/missions.php",
 			dataType: 'json',
 			async: false,
 			data: missionData,
 			success: function (missionData) {
-				console.log(missionData);
 				return missionData;
 			}
 		});
-		return missionData;
 	}
 
 	console.log(getMission());
