@@ -8,7 +8,7 @@ use XCOMDatabank\Utility\Database;
 $currentFL = Info::getForceLevel();
 
 $query = "SELECT * FROM xcom_alien_type WHERE enabled = true and min_force <= :forceLevel ORDER BY faction, name";
-$params[0] = array("param" => ":min_force", "var" => $currentFL, "type" => PDO::PARAM_INT,);
+$params[0] = array("param" => ':forceLevel', "var" => $currentFL, "type" => PDO::PARAM_INT,);
 
 $queryResult = Database::runQuery('select', $query, $params);
 		
