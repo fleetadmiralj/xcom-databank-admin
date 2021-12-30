@@ -121,6 +121,7 @@ $(function(){
 		console.log(dataMission);
 		missionType = dataMission;
 		console.log(missionType);
+		setTimeout(function(){},1000);
 	});
 
 	console.log("Post Mission Load");
@@ -128,6 +129,7 @@ $(function(){
 
 	$(document).on("change", "select.mission-type", function(e) {
 		console.log("Inside mission-type change");
+		console.log("missionType");
 		e.preventDefault();
 		var selection = $(this).find(":selected").val();
 		var objective = missionType[selection];
