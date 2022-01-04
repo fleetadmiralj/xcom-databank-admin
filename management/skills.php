@@ -6,12 +6,13 @@ include_once __DIR__ . '/../../project/adminInclude.php';
 $errorMsg = "";
 $skill = new Skill();
 if(!empty($_POST)) {
+    print_r($_POST);
     if(!empty($_FILES['icon']['name'])) {
         $_POST['icon'] = $_FILES['icon'];
     } else {
         $_POST['icon'] = null;
     }
-    $errorMsg = $skill->processForm($_POST, '/management/skills-list.php');
+    //$errorMsg = $skill->processForm($_POST, '/management/skills-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
