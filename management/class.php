@@ -7,7 +7,7 @@ $errorMsg = "";
 $class = new SoldierClass();
 if(!empty($_POST)) {
     print_r($_POST);
-    $_POST['icon'] = $_FILES;
+    $_POST['icon'] = $_FILES['userfile'];
     $errorMsg = $class->processForm($_POST, '/management/class-list.php');
 }
 else {
