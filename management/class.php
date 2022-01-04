@@ -7,7 +7,8 @@ $errorMsg = "";
 $class = new SoldierClass();
 if(!empty($_POST)) {
     print_r($_POST);
-    //$errorMsg = $class->processForm($_POST, '/management/class-list.php');
+    $_POST['icon'] = $_FILES;
+    $errorMsg = $class->processForm($_POST, '/management/class-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
