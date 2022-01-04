@@ -7,6 +7,7 @@ $errorMsg = "";
 $skill = new Skill();
 if(!empty($_POST)) {
     print_r($_POST);
+    print_r($_FILES);
     if(!empty($_FILES['icon']['name'])) {
         $_POST['icon'] = $_FILES['icon'];
     } else {
