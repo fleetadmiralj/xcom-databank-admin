@@ -6,6 +6,7 @@ include_once __DIR__ . '/../../project/adminInclude.php';
 $errorMsg = "";
 $skill = new Skill();
 if(!empty($_POST)) {
+    $_POST['icon'] = $_FILES['icon'];
     $errorMsg = $skill->processForm($_POST, '/management/skills-list.php');
 }
 else {
