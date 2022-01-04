@@ -6,7 +6,7 @@ include_once __DIR__ . '/../../project/adminInclude.php';
 $errorMsg = "";
 $skill = new Skill();
 if(!empty($_POST)) {
-    if(!empty($_FILES)) {
+    if(isset($_FILES['icon'])) {
         $_POST['icon'] = $_FILES['icon'];
     } else {
         $_POST['icon'] = null;
