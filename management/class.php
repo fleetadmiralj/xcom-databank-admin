@@ -6,7 +6,8 @@ include_once __DIR__ . '/../../project/adminInclude.php';
 $errorMsg = "";
 $class = new SoldierClass();
 if(!empty($_POST)) {
-    $errorMsg = $class->processForm($_POST, '/management/class-list.php');
+    print_r($_POST);
+    //$errorMsg = $class->processForm($_POST, '/management/class-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
