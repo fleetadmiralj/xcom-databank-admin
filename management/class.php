@@ -6,8 +6,7 @@ include_once __DIR__ . '/../../project/adminInclude.php';
 $errorMsg = "";
 $class = new SoldierClass();
 if(!empty($_POST)) {
-    print_r($_POST);
-    $_POST['icon'] = $_FILES['userfile'];
+    $_POST['icon'] = $_FILES['icon'];
     $errorMsg = $class->processForm($_POST, '/management/class-list.php');
 }
 else {
