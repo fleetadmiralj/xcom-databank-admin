@@ -6,6 +6,7 @@ include_once __DIR__ . '/../../project/adminInclude.php';
 $errorMsg = "";
 $rank = new Rank();
 if(!empty($_POST)) {
+    $_POST['icon'] = $_FILES['icon'];
     $errorMsg = $rank->processForm($_POST, '/management/rank-list.php');
 }
 else {
