@@ -184,7 +184,7 @@ table td.title {
 	font-weight: bold;
 }
 
-table tr: nth-child(odd) td {
+table tr:nth-child(odd) td {
 	background-color: #eee;
 }
 
@@ -279,7 +279,7 @@ div.repeat-parent div.field-repeat.alert-danger {
 }
 
 .input-group .form-control:last-child,
-.input-group .form-control:not(: last-child) {
+.input-group .form-control:not(:last-child) {
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 	border-top-right-radius: 5px;
