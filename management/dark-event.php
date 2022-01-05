@@ -6,7 +6,7 @@ $errorMsg = "";
 $darkEvent = new DarkEvent();
 
 if(!empty($_POST)) {
-    $errorMsg = $darkEvent->processForm($_POST, '/management/dark-event.php');
+    $errorMsg = $darkEvent->processForm($_POST, '/management/dark-event-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
