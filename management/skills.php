@@ -8,8 +8,10 @@ $skill = new Skill();
 if(!empty($_POST)) {
     if(!empty($_FILES['icon']['name'])) {
         $_POST['icon'] = $_FILES['icon'];
-    } else {
+    } elseif(isset($_POST['icon_current'])) {
         $_POST['icon'] = $_POST['icon_current'];
+    } else {
+        $_POST['icon'] = null;
     }
     $errorMsg = $skill->processForm($_POST, '/management/skills-list.php');
 }
