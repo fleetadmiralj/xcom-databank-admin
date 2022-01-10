@@ -12,6 +12,11 @@ $mission = new Mission();
 $missionFields = [];
 
 if(!empty($_POST)) {
+    if(!empty($_FILES['picture']['name'])) {
+        $_POST['picture'] = $_FILES['picture'];
+    } else {
+        $_POST['picture'] = $_POST['picture_current'];
+    }
     $missionData = $_POST;
 
     // Collect and Submit Mission Information
@@ -137,14 +142,20 @@ else {
             <h2>Soldiers</h2>
             <div class="repeat-parent col-12">
                 <div class="field-repeat mission-info row gx-0 gy-3">
-                    <?php MissionSoldier::getMissionSoldierForm(null, true, true); ?>
+                    <?php
+                    $blankSoldier = new MissionSoldier;
+                    MissionSoldier::getMissionSoldierForm($blankSoldier, true, true);
+                    ?>
                 </div>
             </div>
 
             <h2>Aliens</h2>
             <div class="repeat-parent col-12">
                 <div class="field-repeat mission-info row gx-0 gy-3">
-                    <?php MissionAlien::getMissionAlienForm(null, true, true); ?>
+                    <?php
+                    $blankAlien = new MissionAlien;
+                    MissionAlien::getMissionAlienForm($blankAlien, true, true);
+                    ?>
                 </div>
             </div>
 
