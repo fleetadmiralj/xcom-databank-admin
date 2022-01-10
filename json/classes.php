@@ -28,18 +28,18 @@ while ($row = $queryResult->fetch()) {
         $classArray[$row['name']]['rank'][$row2['id']] = $row2['name'];
     }
 
-    $query = 'SELECT skill.id as id, skill.name as name FROM xcom_skills as skill 
-			INNER JOIN xcom_class_skill a ON a.skill_id = skill.id 
-			INNER JOIN xcom_class class ON a.class_id = class.id 
-		WHERE class.id = :id and skill.enabled = true ORDER BY skill.name';
+    $query = 'SELECT skill.id as id, skill.name as name, cs.rank_level as level
+                FROM xcom_skills as skill 
+			        INNER JOIN xcom_class_skill as cs ON cs.skill_id = skill.id 
+			        INNER JOIN xcom_class as class ON cs.class_id = class.id 
+		        WHERE class.id = :id and skill.enabled = true ORDER BY cs.rank_level, skill.name';
     $params[0] = array("param" => ":id", "var" => $row['id'], "type" => PDO::PARAM_INT,);
 
     $queryResult2 = Database::runQuery('select', $query, $params);
 			
-    $classArray[$row['name']]['skills'] = [];
-			
+    //$classArray[$row['name']]['skills'] = [];
     while($row2 = $queryResult2->fetch()) {
-        $classArray[$row['name']]['skills'][$row2['id']] = $row2['name'];
+        $classArray[$row['name']]['skills'][$row2['level']][$row2['id']]= $row2['name'];
     }
 }
 
