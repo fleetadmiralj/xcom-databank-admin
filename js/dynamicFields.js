@@ -141,7 +141,7 @@ $(function(){
 	// Update Soldier Rank and Class based on Soldier
 	$(document).on("change", "select.soldierid", function() {
 		$.getJSON("/json/soldiers.php", function (dataMission) {
-			var selection = $('select.soldierid').find(":selected").text();
+			var selection = $('select.soldierid').find(":selected").val();
 			var rank = dataMission[selection];
 			console.log(selection);
 			console.log(dataMission);
