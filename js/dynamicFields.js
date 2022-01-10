@@ -118,7 +118,7 @@ $(function(){
 			for (alien in alienType) {
 				console.log(alien);
 				console.log(alienType[alien]);
-				$("<option />").text(alienType[alien]).val(alien).appendTo($('select.base-alien').parents('.row').find('.alienid'));
+				$("<option />").text(alienType[alien]).val(alien).appendTo($('select.alienid').parents('.row').find('.alienid'));
 			}
 		});
 	});
