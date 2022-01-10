@@ -74,17 +74,18 @@ $(function(){
 		$('#soldier-form .skill-list').empty();
 		for(key in classSkills) {
 			var classSkillRank = classSkills[key];
-			$('<div />').addClass('col-sm-2 rank-'+key).appendTo($('#soldier-form .skill-list'));
+			$('<div />').addClass('col rank-'+key).appendTo($('#soldier-form .skill-list'));
 			//$('<input />', { type: 'checkbox', value: key, name: 'skills[]', text: classSkills[key] }).appendTo($('.skill-'+key));
 			//$('<label />', { 'for': classSkills[key], id: key }).appendTo($('#soldier-form .skill-list')).addClass('col-sm-2');
 			for(var keyrow in classSkillRank) {
+				$('<span />').addClass(classSkillRank[keyrow]).appendTo($('.rank-' + key));
 				$('<input />', {
 					type: 'checkbox',
 					name: 'skills[]',
 					value: keyrow,
 					id: classSkillRank[keyrow]
-				}).appendTo($('.rank-' + key));
-				$('<label />', {'for': classSkillRank[keyrow], id: keyrow, text: classSkillRank[keyrow]}).appendTo($('.rank-' + key));
+				}).appendTo($(classSkillRank[keyrow]));
+				$('<label />', {'for': classSkillRank[keyrow], id: keyrow, text: classSkillRank[keyrow]}).appendTo($(classSkillRank[keyrow]));
 			}
 		}
 	}

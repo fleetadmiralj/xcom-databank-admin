@@ -232,6 +232,7 @@ table tr.captured td {
 
 div.skill-list div {
 	white-space: nowrap;
+	padding: 10px;
 }
 
 div.skill-list input {
