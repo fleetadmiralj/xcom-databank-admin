@@ -143,7 +143,7 @@ $(function(){
 		$.getJSON("/json/soldiers.php", function (dataMission) {
 			var selection = $('select.soldierid').find(":selected").text();
 			var rank = dataMission[selection];
-
+			console.log(rank);
 
 			if(selection == "") {
 				$($('select.soldierid').parents('.row').find('.rank')).empty();
