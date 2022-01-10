@@ -19,11 +19,7 @@ $(function(){
 	});
 
 	function updateClass() {
-		console.log("Update Class is being called");
 		var selected = $('#soldier-form .soldier-class').find(":selected").val();
-		console.log("Soldier Class: " + selected);
-		console.log("Baseclass:");
-		console.log(baseClass);
 		var currentClass;
 		var classRanks;
 		var classSkills;
@@ -74,7 +70,8 @@ $(function(){
 		for(key in classRanks) {
 			$("<option />").text(classRanks[key]).val(key).appendTo($('#soldier-form #soldier-rank'));
 		}
-		
+
+		console.log(classSkills);
 		$('#soldier-form .skill-list').empty();
 		for(key in classSkills) {
 			$('<div />').addClass('col-sm-2 skill-'+key).appendTo($('#soldier-form .skill-list'));
