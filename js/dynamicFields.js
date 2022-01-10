@@ -111,10 +111,13 @@ $(function(){
 		$.getJSON("/json/aliens.php", function (dataMission) {
 			var selection = $('select.typeid').find(":selected").val();
 			var alienType = dataMission[selection];
-
+			console.log(selection);
+			console.log(dataMission);
 			console.log(alienType);
 			$($('select.typeid').parents('.row').find('.alienid')).empty();
 			for (alien in alienType) {
+				console.log(alien);
+				console.log(alienType[alien]);
 				$("<option />").text(alienType[alien]).val(alien).appendTo($('select.base-alien').parents('.row').find('.alienid'));
 			}
 		});
