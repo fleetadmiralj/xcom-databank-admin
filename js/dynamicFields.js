@@ -139,9 +139,24 @@ $(function(){
 	});
 	
 	// Update Soldier Rank and Class based on Soldier
-	var soldiers;
-	$.getJSON("/json/soldiers.php", function (dataMission) {
-		soldiers = dataMission;
+	$(document).on("change", "select.soldierid", function() {
+		$.getJSON("/json/soldiers.php", function (dataMission) {
+			var selection = $('select.soldierid').find(":selected").text();
+			var rank = dataMission[selection];
+
+
+			if(selection == "") {
+				$($('select.soldierid').parents('.row').find('.rank')).empty();
+				$("<option />").text("N/A").val("").appendTo($('select.soldierid').parents('.row').find('.rank'));
+				$($('select.soldierid').parents('.row').find('.class')).empty();
+				$("<option />").text("N/A").val("").appendTo($('select.soldierid').parents('.row').find('.class'));
+			} else {
+				$($('select.soldierid').parents('.row').find('.rank')).empty();
+				$("<option />").text(rank['Rank']).val(rank['RankID']).appendTo($('select.soldierid').parents('.row').find('.rank'));
+				$($('select.soldierid').parents('.row').find('.class')).empty();
+				$("<option />").text(rank['Class']).val(rank['ClassID']).appendTo($('select.soldierid').parents('.row').find('.class'));
+			}
+		});
 	});
 	
 	$(document).on("change", "select.soldierid", function(e) {
