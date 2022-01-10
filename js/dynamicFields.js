@@ -84,8 +84,8 @@ $(function(){
 					name: 'skills[]',
 					value: keyrow,
 					id: classSkillRank[keyrow]
-				}).appendTo($(classSkillRank[keyrow]));
-				$('<label />', {'for': classSkillRank[keyrow], id: keyrow, text: classSkillRank[keyrow]}).appendTo($(classSkillRank[keyrow]));
+				}).appendTo($('.' + classSkillRank[keyrow]));
+				$('<label />', {'for': classSkillRank[keyrow], id: keyrow, text: classSkillRank[keyrow]}).appendTo($('.' + classSkillRank[keyrow]));
 			}
 		}
 	}
