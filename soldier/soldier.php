@@ -28,6 +28,8 @@ if(!empty($_POST)) {
             $errorMsg .= $soldierSkill->processForm($soldierSkillFields);
         }
     }
+
+    header('Location: /soldier/soldier-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
