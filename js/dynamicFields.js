@@ -78,15 +78,13 @@ $(function(){
 			//$('<input />', { type: 'checkbox', value: key, name: 'skills[]', text: classSkills[key] }).appendTo($('.skill-'+key));
 			//$('<label />', { 'for': classSkills[key], id: key }).appendTo($('#soldier-form .skill-list')).addClass('col-sm-2');
 			for(var keyrow in classSkillRank) {
-				console.log(keyrow);
-				console.log(classSkillRank[keyrow]);
 				$('<input />', {
 					type: 'checkbox',
 					name: 'skills[]',
 					value: keyrow,
-					id: classSkills[key][keyrow]
+					id: classSkillRank[keyrow]
 				}).appendTo($('.skill-' + key));
-				$('<label />', {'for': classSkills[key][keyrow], id: keyrow, text: classSkills[key][keyrow]}).appendTo($('.skill-' + key));
+				$('<label />', {'for': classSkillRank[keyrow], id: keyrow, text: classSkillRank[keyrow]}).appendTo($('.skill-' + key));
 			}
 		}
 	}
