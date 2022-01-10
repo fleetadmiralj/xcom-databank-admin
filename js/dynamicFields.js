@@ -6,7 +6,7 @@ $(function(){
 		baseClass = data;
 	});
 	
-	$(document).on("change", "#soldier-class", function(e) {
+	$(document).on("change", "select.soldier-class", function(e) {
 		updateClass();
 	});
 	
@@ -19,7 +19,7 @@ $(function(){
 	});
 
 	function updateClass() {
-		var selected = $('#soldier-form #soldier-class').find(":selected").val();
+		var selected = $('#soldier-form select.soldier-class').find(":selected").val();
 		var currentClass;
 		var classRanks;
 		var classSkills;
@@ -44,20 +44,20 @@ $(function(){
 		} */
 		
 		//If Spark, disable will and psi fields - code or Psi field added for season 6
-		if(className == "Spark") {
-			$('div.will-field input').val(null);
-			$('div.psi-field input').val(null);
-			$('div.will-field input').attr('disabled', 'disabled');
-			$('div.psi-field input').attr('disabled', 'disabled');
+		if(className === "Spark") {
+			$('#will').val(null);
+			$('#psi').val(null);
+			$('#will').attr('disabled', 'disabled');
+			$('t#psi').attr('disabled', 'disabled');
 		}
 		else {
-			$('div.will-field input').removeAttr("disabled");
-			$('div.psi-field input').removeAttr("disabled");
-			$('div.will-field input').css("background-color", "");
-			$('div.psi-field input').css("background-color", "");
+			$('#will').removeAttr("disabled");
+			$('#psi').removeAttr("disabled");
+			$('#will').css("background-color", "");
+			$('#psi').css("background-color", "");
 		}
 		
-		if(className == "Reaper" || className == "Skirmisher" || className == "Templar" || className == "Spark") {
+		if(className === "Reaper" || className === "Skirmisher" || className === "Templar" || className === "Spark") {
 			$('#country').val(null);
 			$('#country').attr('disabled', 'disabled');
 			$('#country').css("background-color", "");
@@ -66,7 +66,7 @@ $(function(){
 			$('#country').removeAttr("disabled");
 		}
 		
-		$('#soldier-form #soldier-rank').empty();
+		$('#soldier-form #rank').empty();
 		for(key in classRanks) {
 			$("<option />").text(classRanks[key]).val(key).appendTo($('#soldier-form #soldier-rank'));
 		}
