@@ -109,7 +109,7 @@ $(function(){
 	// Update Alien list based on baseAlien
 	$(document).on("change", "select.typeid", function() {
 		$.getJSON("/json/aliens.php", function (dataMission) {
-			var selection = $('select.typeid').find(":selected").val();
+			var selection = $('select.typeid').find(":selected").text();
 			var alienType = dataMission[selection];
 			console.log(selection);
 			console.log(dataMission);
