@@ -159,23 +159,6 @@ $(function(){
 		});
 	});
 	
-	$(document).on("change", "select.soldierid", function(e) {
-		e.preventDefault();
-		var selection = $(this).find(":selected").val();
-		var rank = soldiers[selection];
-		if(selection == "") {
-			$($(this).parents('.mission-info.row').find('.rank')).empty();
-			$("<option />").text("N/A").val("").appendTo($(this).parents('.row').find('.rank'));
-			$($(this).parents('.mission-info.row').find('.class')).empty();
-			$("<option />").text("N/A").val("").appendTo($(this).parents('.row').find('.class'));
-		} else {
-			$($(this).parents('.mission-info.row').find('.rank')).empty();
-			$("<option />").text(rank['Rank']).val(rank['RankID']).appendTo($(this).parents('.row').find('.rank'));
-			$($(this).parents('.mission-info.row').find('.class')).empty();
-			$("<option />").text(rank['Class']).val(rank['ClassID']).appendTo($(this).parents('.row').find('.class'));
-		}
-	});
-	
 	/* Update Chosen Results List based on Chosen
 	var chosen;
 	$.getJSON("/admin/json/chosen.json", function (dataChosen) {
