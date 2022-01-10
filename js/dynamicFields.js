@@ -111,13 +111,8 @@ $(function(){
 		$.getJSON("/json/aliens.php", function (dataMission) {
 			var selection = $('select.typeid').find(":selected").text();
 			var alienType = dataMission[selection];
-			console.log(selection);
-			console.log(dataMission);
-			console.log(alienType);
 			$($('select.typeid').parents('.row').find('.alienid')).empty();
 			for (alien in alienType) {
-				console.log(alien);
-				console.log(alienType[alien]);
 				$("<option />").text(alienType[alien]).val(alien).appendTo($('select.alienid').parents('.row').find('.alienid'));
 			}
 		});
@@ -128,7 +123,6 @@ $(function(){
 		$.getJSON("/json/missions.php", function (dataMission) {
 			var selection = $('select.mission-type').find(":selected").text();
 			var objective = dataMission[selection];
-			console.log(objective);
 			$($('select.mission-type').parents('.row').find('.objective')).empty();
 			for (obj in objective) {
 				$("<option />").text(objective[obj]).val(obj).appendTo($('select.mission-type').parents('.row').find('.objective'));
