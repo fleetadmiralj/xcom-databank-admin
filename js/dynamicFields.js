@@ -107,22 +107,16 @@ $(function(){
 	}
 
 	// Update Alien list based on baseAlien
-	var baseAliens;
-	$.getJSON("/json/aliens.php", function (data) {
-		baseAliens = data;
-	});
-				
-	$(document).on("change", "select.base-alien", function(e) {
-		e.preventDefault();
-		console.log($(this).find(":selected").val());
-		var selection = $(this).find(":selected").val();
-		var alienType = baseAliens[selection];
-		console.log($(this).parents('.mission-info.row'));
-		console.log($($(this).parents('.mission-info.row').find('.alien')));
-		$($(this).parents('.mission-info.row').find('.alien')).empty();
-		for (alien in alienType) {
-			$("<option />").text(alienType[alien]).val(alien).appendTo($(this).parents('.row').find('.alien'));
-		}
+	$(document).on("change", "select.base-alien", function() {
+		$.getJSON("/json/aliens.php", function (dataMission) {
+			var selection = $('select.typeid').find(":selected").val();
+			var alienType = dataMission[selection];
+
+			$($('select.base-alien').parents('.row').find('.alienid')).empty();
+			for (alien in alienType) {
+				$("<option />").text(alienType[alien]).val(alien).appendTo($('select.base-alien').parents('.row').find('.alienid'));
+			}
+		});
 	});
 
 	// Update Objective when Mission Type Changes
@@ -143,9 +137,6 @@ $(function(){
 		$.getJSON("/json/soldiers.php", function (dataMission) {
 			var selection = $('select.soldierid').find(":selected").val();
 			var rank = dataMission[selection];
-			console.log(selection);
-			console.log(dataMission);
-			console.log(rank);
 
 			if(selection == "") {
 				$($('select.soldierid').parents('.row').find('.rank')).empty();
