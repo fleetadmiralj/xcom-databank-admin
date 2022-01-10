@@ -19,7 +19,11 @@ $(function(){
 	});
 
 	function updateClass() {
-		var selected = $('#soldier-form select.soldier-class').find(":selected").val();
+		console.log("Update Class is being called");
+		var selected = $('#soldier-form .soldier-class').find(":selected").val();
+		console.log("Soldier Class: " + selected);
+		console.log("Baseclass:");
+		console.log(baseClass);
 		var currentClass;
 		var classRanks;
 		var classSkills;
