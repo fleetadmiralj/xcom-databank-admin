@@ -78,14 +78,14 @@ $(function(){
 			//$('<input />', { type: 'checkbox', value: key, name: 'skills[]', text: classSkills[key] }).appendTo($('.skill-'+key));
 			//$('<label />', { 'for': classSkills[key], id: key }).appendTo($('#soldier-form .skill-list')).addClass('col-sm-2');
 			for(var keyrow in classSkillRank) {
-				$('<span />').addClass(classSkillRank[keyrow]).appendTo($('.rank-' + key));
+				$('<span />').addClass(classSkillRank[keyrow].replace(/\s/g, '')).appendTo($('.rank-' + key));
 				$('<input />', {
 					type: 'checkbox',
 					name: 'skills[]',
 					value: keyrow,
 					id: classSkillRank[keyrow]
-				}).appendTo($('.' + classSkillRank[keyrow]));
-				$('<label />', {'for': classSkillRank[keyrow], id: keyrow, text: classSkillRank[keyrow]}).appendTo($('.' + classSkillRank[keyrow]));
+				}).appendTo($('.' + classSkillRank[keyrow].replace(/\s/g, '')));
+				$('<label />', {'for': classSkillRank[keyrow], id: keyrow, text: classSkillRank[keyrow]}).appendTo($('.' + classSkillRank[keyrow.replace(/\s/g, '')));
 			}
 		}
 	}
