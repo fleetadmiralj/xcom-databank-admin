@@ -65,7 +65,7 @@ $(function(){
 		else {
 			$('#country').removeAttr("disabled");
 		}
-		
+
 		$('#soldier-form #rank').empty();
 		for(key in classRanks) {
 			$("<option />").text(classRanks[key]).val(key).appendTo($('#soldier-form #rank'));

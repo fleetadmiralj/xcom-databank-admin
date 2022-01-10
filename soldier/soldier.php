@@ -9,6 +9,11 @@ $soldier = new Soldier();
 $missionFields = [];
 
 if(!empty($_POST)) {
+    if(!empty($_FILES['picture']['name'])) {
+        $_POST['picture'] = $_FILES['picture'];
+    } else {
+        $_POST['picture'] = $_POST['picture_current'];
+    }
     $errorMsg = $soldier->processForm($_POST);
 
     // Get the soldier ID
