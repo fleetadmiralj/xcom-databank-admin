@@ -74,11 +74,20 @@ $(function(){
 		console.log(classSkills);
 		$('#soldier-form .skill-list').empty();
 		for(key in classSkills) {
-			$('<div />').addClass('col-sm-2 skill-'+key).appendTo($('#soldier-form .skill-list'));
+			console.log(key);
+			$('<div />').addClass('col-sm-2 rank-'+key).appendTo($('#soldier-form .skill-list'));
 			//$('<input />', { type: 'checkbox', value: key, name: 'skills[]', text: classSkills[key] }).appendTo($('.skill-'+key));
 			//$('<label />', { 'for': classSkills[key], id: key }).appendTo($('#soldier-form .skill-list')).addClass('col-sm-2');
-			$('<input />', { type: 'checkbox', name: 'skills[]', value: key, id: classSkills[key]  }).appendTo($('.skill-'+key));
-			$('<label />', { 'for': classSkills[key], id: key, text: classSkills[key] }).appendTo($('.skill-'+key));
+			for(var keyrow in key) {
+				console.log(keyrow);
+				$('<input />', {
+					type: 'checkbox',
+					name: 'skills[]',
+					value: keyrow,
+					id: classSkills[key][keyrow]
+				}).appendTo($('.skill-' + key));
+				$('<label />', {'for': classSkills[key][keyrow], id: keyrow, text: classSkills[key][keyrow]}).appendTo($('.skill-' + key));
+			}
 		}
 	}
 
