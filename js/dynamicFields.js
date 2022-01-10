@@ -112,6 +112,7 @@ $(function(){
 			var selection = $('select.typeid').find(":selected").val();
 			var alienType = dataMission[selection];
 
+			console.log(alienType);
 			$($('select.typeid').parents('.row').find('.alienid')).empty();
 			for (alien in alienType) {
 				$("<option />").text(alienType[alien]).val(alien).appendTo($('select.base-alien').parents('.row').find('.alienid'));
