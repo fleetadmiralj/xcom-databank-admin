@@ -85,7 +85,7 @@ $(function(){
 					value: keyrow,
 					id: classSkillRank[keyrow]
 				}).appendTo($('.' + classSkillRank[keyrow].replace(/\s/g, '')));
-				$('<label />', {'for': classSkillRank[keyrow], id: keyrow, text: classSkillRank[keyrow]}).appendTo($('.' + classSkillRank[keyrow.replace(/\s/g, '')));
+				$('<label />', {'for': classSkillRank[keyrow], id: keyrow, text: classSkillRank[keyrow]}).appendTo($('.' + classSkillRank[keyrow].replace(/\s/g, '')));
 			}
 		}
 	}
