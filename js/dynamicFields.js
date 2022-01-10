@@ -65,12 +65,10 @@ $(function(){
 		else {
 			$('#country').removeAttr("disabled");
 		}
-
-		console.log(classRanks);
+		
 		$('#soldier-form #rank').empty();
 		for(key in classRanks) {
-			console.log(classRanks[key]);
-			$("<option />").text(classRanks[key]).val(key).appendTo($('#soldier-form #soldier-rank'));
+			$("<option />").text(classRanks[key]).val(key).appendTo($('#soldier-form #rank'));
 		}
 
 		$('#soldier-form .skill-list').empty();
