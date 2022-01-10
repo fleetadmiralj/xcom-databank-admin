@@ -135,7 +135,7 @@ $(function(){
 		$.getJSON("/json/soldiers.php", function (dataMission) {
 			var selection = $('select.soldierid').find(":selected").val();
 			var rank = dataMission[selection];
-
+			console.log($(this));
 			if(selection == "") {
 				$($(this).parents('.row').find('.rank')).empty();
 				$("<option />").text("N/A").val("").appendTo($(this).parents('.row').find('.rank'));
