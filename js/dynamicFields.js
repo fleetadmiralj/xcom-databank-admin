@@ -74,7 +74,8 @@ $(function(){
 		console.log(classSkills);
 		$('#soldier-form .skill-list').empty();
 		for(key in classSkills) {
-			console.log(key);
+			var classSkillRank = classSkills['key'];
+			console.log(classSkillRank);
 			$('<div />').addClass('col-sm-2 rank-'+key).appendTo($('#soldier-form .skill-list'));
 			//$('<input />', { type: 'checkbox', value: key, name: 'skills[]', text: classSkills[key] }).appendTo($('.skill-'+key));
 			//$('<label />', { 'for': classSkills[key], id: key }).appendTo($('#soldier-form .skill-list')).addClass('col-sm-2');
