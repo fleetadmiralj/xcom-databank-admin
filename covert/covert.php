@@ -15,18 +15,16 @@ if(!empty($_POST)) {
     $actionID = $action->id;
 
     // Get Soldier Skills and Submit
-    if(!empty($_POST['operative'])) {
-        for( $i = 0; $i < sizeof($_POST['operative']); $i++ ) {
-            $operative = new CovertOperative;
-            $operativeFields['action_id'] = $actionID;
-            $operativeFields['soldier_id'] = $_POST['soldier_id'][$i];
-            $operativeFields['resource'] = $_POST['resource'][$i];
-            $operativeFields['requirement'] = $_POST['requirement'][$i];
-            $operativeFields['opReward'] = $_POST['opReward'][$i];
-            $operativeFields['opStatus'] = $_POST['opStatus'][$i];
-            $operativeFields['promoted'] = $_POST['promoted'][$i];
-            $errorMsg .= $operative->processForm($operativeFields);
-        }
+    for( $i = 0; $i < sizeof($_POST['requirement']); $i++ ) {
+        $operative = new CovertOperative;
+        $operativeFields['action_id'] = $actionID;
+        $operativeFields['soldier_id'] = $_POST['soldier_id'][$i];
+        $operativeFields['resource'] = $_POST['resource'][$i];
+        $operativeFields['requirement'] = $_POST['requirement'][$i];
+        $operativeFields['opReward'] = $_POST['opReward'][$i];
+        $operativeFields['opStatus'] = $_POST['opStatus'][$i];
+        $operativeFields['promoted'] = $_POST['promoted'][$i];
+        $errorMsg .= $operative->processForm($operativeFields);
     }
     header('Location: /covert/covert-list.php');
 }
