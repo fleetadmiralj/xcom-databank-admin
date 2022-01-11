@@ -8,8 +8,6 @@ $action = new CovertAction();
 $operativeFields = [];
 
 if(!empty($_POST)) {
-    print_r($_POST);
-    echo '<br />';
     $errorMsg = $action->processForm($_POST);
 
     // Get the soldier ID
@@ -28,6 +26,8 @@ if(!empty($_POST)) {
         $operativeFields['opReward'] = $_POST['opReward'][$i];
         $operativeFields['opStatus'] = $_POST['opStatus'][$i];
         $operativeFields['promoted'] = $_POST['promoted'][$i];
+        print_r($operativeFields);
+        echo '<br />';
         $errorMsg .= $operative->processForm($operativeFields);
     }
     header('Location: /covert/covert-list.php');
