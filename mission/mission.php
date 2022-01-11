@@ -77,7 +77,11 @@ if(!empty($_POST)) {
         $soldierFields['mvp'] = $missionData['mvp'][$i];
         $soldierFields['status'] = $missionData['status'][$i];
         $soldierFields['extra'] = $missionData['extra'][$i];
-        $soldierFields['extra_info'] = $missionData['extra_info'][$i];
+        if(isset($missionData['extra_info'][$i])) {
+            $soldierFields['extra_info'] = $missionData['extra_info'][$i];
+        } else {
+            $soldierFields['extra_info'] = null;
+        }
         $soldierFields['promoted'] = $missionData['promoted'][$i];
         if(isset($missionData['MSid'][$i])) {
             $soldierFields['id'] = $missionData['MSid'][$i];
