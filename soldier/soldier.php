@@ -23,7 +23,11 @@ if(!empty($_POST)) {
     for( $i = 0; $i < sizeof($soldierData['skills']); $i++ ) {
         $soldierSkill = new SoldierSkill;
         $soldierSkillFields['soldier_id'] = $soldierID;
-        $soldierSkillFields['soldierSkill_id'] = $soldierData['soldierSkill_id'][$i];
+        if(isset($soldierData['soldierSkill_id'])) {
+            $soldierSkillFields['soldierSkill_id'] = $soldierData['soldierSkill_id'][$i];
+        } else {
+            $soldierSkillFields['soldierSkill_id'] = null;
+        }
         $soldierSkillFields['skill_id'] = $soldierData['skills'][$i];
         $errorMsg .= $soldierSkill->processForm($soldierSkillFields);
     }
