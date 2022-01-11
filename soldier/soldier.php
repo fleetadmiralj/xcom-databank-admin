@@ -19,21 +19,28 @@ if(!empty($_POST)) {
     // Get the soldier ID
     $soldierID = $soldier->id;
 
-    // Get Soldier Skills and Submit
-    for( $i = 0; $i < sizeof($soldierData['skills']); $i++ ) {
-        $soldierSkill = new SoldierSkill;
-        $soldierSkillFields['soldier_id'] = $soldierID;
-        if(isset($soldierData['soldierSkill_id'])) {
-            $soldierSkillFields['soldierSkill_id'] = $soldierData['soldierSkill_id'][$i];
-        }
-        $soldierSkillFields['skill_id'] = $soldierData['skills'][$i];
-        $errorMsg .= $soldierSkill->processForm($soldierSkillFields);
+    // Dumps all CURRENT soldier skill IDs into an array to access later
+    if(is_array($soldierData['soldierSkill_id'])) {
+        $ssidArray = $soldierData['soldierSkill_id'];
+    } else {
+        $ssidArray = array();
     }
 
+    // Run through all checked skills
     if(!empty($_POST['skills'])) {
         foreach($_POST['skills'] as $item) {
             $soldierSkill = new SoldierSkill;
-            $soldierSkillFields['soldierSkill_id'] = $soldierID;
+
+            // If the soldier/skill combo exists in the database, get the soldier skill ID, otherwise, get null
+            $hasSkill = SoldierSkill::getSoldierSkillIDbySkill($item, $soldierID);
+
+            // If the skill exists, and the skill is at the front of the SSID array,
+            // then send the ID as soldierSkill_id to processForm and remove the item from the SSID array
+            if($hasSkill == $ssidArray[0]) {
+                $soldierSkillFields['soldierSkill_id'] = $hasSkill;
+                array_shift($ssidArray);
+            }
+
             $soldierSkillFields['soldier_id'] = $soldierID;
             $soldierSkillFields['skill_id'] = $item;
             $errorMsg .= $soldierSkill->processForm($soldierSkillFields);
