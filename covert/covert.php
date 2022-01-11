@@ -17,7 +17,9 @@ if(!empty($_POST)) {
     for( $i = 0; $i < sizeof($_POST['requirement']); $i++ ) {
         $operative = new CovertOperative;
         $operativeFields['action_id'] = $actionID;
-        $operativeFields['operative_id'] = $_POST['operative_id'][$i];
+        if(is_array($_POST['operative_id'])) {
+            $operativeFields['operative_id'] = $_POST['operative_id'][$i];
+        }
         $operativeFields['soldier_id'] = $_POST['soldier_id'][$i];
         $operativeFields['resource'] = $_POST['resource'][$i];
         $operativeFields['requirement'] = $_POST['requirement'][$i];
