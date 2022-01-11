@@ -80,6 +80,7 @@ $(function(){
 			for(var keyrow in classSkillRank) {
 				var shortSkill = classSkillRank[keyrow].replace(/\s/g, '');
 				shortSkill = shortSkill.replace("'", '');
+				shortSkill = shortSkill.replace("!", '');
 				$('<span />').addClass(shortSkill).appendTo($('.rank-' + key));
 				$('<input />', {
 					type: 'checkbox',
