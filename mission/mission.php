@@ -108,9 +108,7 @@ if(!empty($_POST)) {
         }
     }
 
-    if($errorMsg != "") {
-		header('Location: /mission/mission-list.php');
-	}
+    header('Location: /mission/mission-list.php');
 }
 else {
 ?>
