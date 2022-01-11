@@ -26,8 +26,7 @@ if(!empty($_POST)) {
         $operativeFields['opReward'] = $_POST['opReward'][$i];
         $operativeFields['opStatus'] = $_POST['opStatus'][$i];
         $operativeFields['promoted'] = $_POST['promoted'][$i];
-        print_r($operativeFields);
-        echo '<br />';
+
         $errorMsg .= $operative->processForm($operativeFields);
     }
     header('Location: /covert/covert-list.php');
