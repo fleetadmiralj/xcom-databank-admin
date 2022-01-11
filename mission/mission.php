@@ -68,8 +68,8 @@ if(!empty($_POST)) {
         $soldierFields['shots_taken'] = $missionData['shots_taken'][$i];
         $soldierFields['overwatch_hit'] = $missionData['overwatch_hit'][$i];
         $soldierFields['overwatch_taken'] = $missionData['overwatch_taken'][$i];
-        $soldierFields['melee_hit'] = $missionData['melee_hit'][$i];
-        $soldierFields['melee_taken'] = $missionData['melee_taken'][$i];
+        $soldierFields['other_hit'] = $missionData['other_hit'][$i];
+        $soldierFields['other_taken'] = $missionData['other_taken'][$i];
         $soldierFields['damage'] = $missionData['damage'][$i];
         $soldierFields['healing'] = $missionData['healing'][$i];
         $soldierFields['killed_aliens'] = $missionData['killed_aliens'][$i];
