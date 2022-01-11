@@ -26,6 +26,7 @@ if(!empty($_POST)) {
     if(!empty($_POST['skills'])) {
         foreach($_POST['skills'] as $item) {
             $soldierSkill = new SoldierSkill;
+            $soldierSkillFields = array();
 
             // If the soldier/skill combo exists in the database, get the soldier skill ID, otherwise, get null
             $hasSkill = SoldierSkill::getSoldierSkillIDbySkill($item, $soldierID);
