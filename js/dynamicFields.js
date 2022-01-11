@@ -108,12 +108,13 @@ $(function(){
 
 	// Update Alien list based on baseAlien
 	$(document).on("change", "select.typeid", function() {
+		var currentType = $(this);
 		$.getJSON("/json/aliens.php", function (dataMission) {
-			var selection = $('select.typeid').find(":selected").text();
+			var selection = currentType.find(":selected").text();
 			var alienType = dataMission[selection];
-			$($('select.typeid').parents('.row').find('.alienid')).empty();
+			$(currentType.parents('.row').find('.alienid')).empty();
 			for (alien in alienType) {
-				$("<option />").text(alienType[alien]).val(alien).appendTo($('select.alienid').parents('.row').find('.alienid'));
+				$("<option />").text(alienType[alien]).val(alien).appendTo(currentType.parents('.row').find('.alienid'));
 			}
 		});
 	});
@@ -136,8 +137,6 @@ $(function(){
 		$.getJSON("/json/soldiers.php", function (dataMission) {
 			var selection = currentSoldier.find(":selected").val();
 			var rank = dataMission[selection];
-			console.log(selection);
-			console.log(currentSoldier);
 			if(selection == "") {
 				$(currentSoldier.parents('.field-repeat.row').find('.rank')).empty();
 				$("<option />").text("N/A").val("").appendTo(currentSoldier.parents('.field-repeat.row').find('.rank'));
