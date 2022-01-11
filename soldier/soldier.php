@@ -20,11 +20,7 @@ if(!empty($_POST)) {
     $soldierID = $soldier->id;
 
     // Dumps all CURRENT soldier skill IDs into an array to access later
-    if(is_array($soldierData['soldierSkill_id'])) {
-        $ssidArray = $soldierData['soldierSkill_id'];
-    } else {
-        $ssidArray = array();
-    }
+    $ssidArray = $soldierData['soldierSkill_id'] ?? array();
 
     // Run through all checked skills
     if(!empty($_POST['skills'])) {
