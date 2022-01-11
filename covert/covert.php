@@ -15,6 +15,7 @@ if(!empty($_POST)) {
     $actionID = $action->id;
 
     // Get Soldier Skills and Submit
+    print_r($_POST['requirement']);
     for( $i = 0; $i < sizeof($_POST['requirement']); $i++ ) {
         $operative = new CovertOperative;
         $operativeFields['action_id'] = $actionID;
