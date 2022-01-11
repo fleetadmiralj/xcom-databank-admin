@@ -25,8 +25,6 @@ if(!empty($_POST)) {
         $soldierSkillFields['soldier_id'] = $soldierID;
         if(isset($soldierData['soldierSkill_id'])) {
             $soldierSkillFields['soldierSkill_id'] = $soldierData['soldierSkill_id'][$i];
-        } else {
-            $soldierSkillFields['soldierSkill_id'] = null;
         }
         $soldierSkillFields['skill_id'] = $soldierData['skills'][$i];
         $errorMsg .= $soldierSkill->processForm($soldierSkillFields);
