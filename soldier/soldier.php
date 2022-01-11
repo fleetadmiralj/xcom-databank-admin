@@ -6,7 +6,6 @@ include_once __DIR__.'/../../project/adminInclude.php';
 
 $errorMsg = "";
 $soldier = new Soldier();
-$missionFields = [];
 
 if(!empty($_POST)) {
     if(!empty($_FILES['picture']['name'])) {
@@ -14,15 +13,25 @@ if(!empty($_POST)) {
     } else {
         $_POST['picture'] = $_POST['picture_current'];
     }
-    $errorMsg = $soldier->processForm($_POST);
+    $soldierData = $_POST;
+    $errorMsg = $soldier->processForm($soldierData);
 
     // Get the soldier ID
     $soldierID = $soldier->id;
 
     // Get Soldier Skills and Submit
+    for( $i = 0; $i < sizeof($soldierData['skills']); $i++ ) {
+        $soldierSkill = new SoldierSkill;
+        $soldierSkillFields['soldier_id'] = $soldierID;
+        $soldierSkillFields['soldierSkill_id'] = $soldierData['soldierSkill_id'][$i];
+        $soldierSkillFields['skill_id'] = $soldierData['skills'][$i];
+        $errorMsg .= $soldierSkill->processForm($soldierSkillFields);
+    }
+
     if(!empty($_POST['skills'])) {
         foreach($_POST['skills'] as $item) {
             $soldierSkill = new SoldierSkill;
+            $soldierSkillFields['soldierSkill_id'] = $soldierID;
             $soldierSkillFields['soldier_id'] = $soldierID;
             $soldierSkillFields['skill_id'] = $item;
             $errorMsg .= $soldierSkill->processForm($soldierSkillFields);
