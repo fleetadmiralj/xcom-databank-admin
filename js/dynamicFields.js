@@ -132,20 +132,20 @@ $(function(){
 	
 	// Update Soldier Rank and Class based on Soldier
 	$(document).on("change", "select.soldierid", function() {
-		console.log($(this));
+		var currentSoldier = $(this);
 		$.getJSON("/json/soldiers.php", function (dataMission) {
 			var selection = $('select.soldierid').find(":selected").val();
 			var rank = dataMission[selection];
 			if(selection == "") {
-				$($(this).parents('.row').find('.rank')).empty();
-				$("<option />").text("N/A").val("").appendTo($(this).parents('.row').find('.rank'));
-				$($(this).parents('.row').find('.class')).empty();
-				$("<option />").text("N/A").val("").appendTo($(this).parents('.row').find('.class'));
+				$(currentSoldier.parents('.row').find('.rank')).empty();
+				$("<option />").text("N/A").val("").appendTo(currentSoldier.parents('.row').find('.rank'));
+				$(currentSoldier.parents('.row').find('.class')).empty();
+				$("<option />").text("N/A").val("").appendTo(currentSoldier.parents('.row').find('.class'));
 			} else {
-				$($(this).parents('.row').find('.rank')).empty();
-				$("<option />").text(rank['Rank']).val(rank['RankID']).appendTo($(this).parents('.row').find('.rank'));
-				$($(this).parents('.row').find('.class')).empty();
-				$("<option />").text(rank['Class']).val(rank['ClassID']).appendTo($(this).parents('.row').find('.class'));
+				$(currentSoldier.parents('.row').find('.rank')).empty();
+				$("<option />").text(rank['Rank']).val(rank['RankID']).appendTo(currentSoldier.parents('.row').find('.rank'));
+				$(currentSoldier.parents('.row').find('.class')).empty();
+				$("<option />").text(rank['Class']).val(rank['ClassID']).appendTo(currentSoldier.parents('.row').find('.class'));
 			}
 		});
 	});
