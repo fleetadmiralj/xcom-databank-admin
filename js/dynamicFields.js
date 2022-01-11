@@ -134,8 +134,10 @@ $(function(){
 	$(document).on("change", "select.soldierid", function() {
 		var currentSoldier = $(this);
 		$.getJSON("/json/soldiers.php", function (dataMission) {
-			var selection = $('select.soldierid').find(":selected").val();
+			var selection = currentSoldier.find(":selected").val();
 			var rank = dataMission[selection];
+			console.log(selection);
+			console.log(currentSoldier);
 			if(selection == "") {
 				$(currentSoldier.parents('.field-repeat.row').find('.rank')).empty();
 				$("<option />").text("N/A").val("").appendTo(currentSoldier.parents('.field-repeat.row').find('.rank'));
