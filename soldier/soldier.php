@@ -32,14 +32,12 @@ if(!empty($_POST)) {
 
             // If the skill exists, and the skill is at the front of the SSID array,
             // then send the ID as soldierSkill_id to processForm and remove the item from the SSID array
-            echo 'Pre Check<br />';
             if(is_array($ssidArray) and $ssidArray != array()) {
                 if($hasSkill == $ssidArray[0]) {
                     $soldierSkillFields['soldierSkill_id'] = $hasSkill;
                     array_shift($ssidArray);
                 }
             }
-            echo 'Post Check<br />';
 
             $soldierSkillFields['soldier_id'] = $soldierID;
             $soldierSkillFields['skill_id'] = $item;
