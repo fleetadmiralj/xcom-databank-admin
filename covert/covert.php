@@ -25,6 +25,7 @@ if(!empty($_POST)) {
         $operativeFields['promoted'] = $_POST['promoted'][$i];
         $errorMsg .= $operative->processForm($operativeFields);
     }
+    echo "hello?";
     header('Location: /covert/covert-list.php');
 }
 else {
