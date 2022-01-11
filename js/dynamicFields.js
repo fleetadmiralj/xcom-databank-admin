@@ -137,15 +137,15 @@ $(function(){
 			var selection = $('select.soldierid').find(":selected").val();
 			var rank = dataMission[selection];
 			if(selection == "") {
-				$(currentSoldier.parents('.row').find('.rank')).empty();
-				$("<option />").text("N/A").val("").appendTo(currentSoldier.parents('.row').find('.rank'));
+				$(currentSoldier.parents('.field-repeat.row').find('.rank')).empty();
+				$("<option />").text("N/A").val("").appendTo(currentSoldier.parents('.field-repeat.row').find('.rank'));
 				$(currentSoldier.parents('.row').find('.class')).empty();
-				$("<option />").text("N/A").val("").appendTo(currentSoldier.parents('.row').find('.class'));
+				$("<option />").text("N/A").val("").appendTo(currentSoldier.parents('.field-repeat.row').find('.class'));
 			} else {
-				$(currentSoldier.parents('.row').find('.rank')).empty();
-				$("<option />").text(rank['Rank']).val(rank['RankID']).appendTo(currentSoldier.parents('.row').find('.rank'));
-				$(currentSoldier.parents('.row').find('.class')).empty();
-				$("<option />").text(rank['Class']).val(rank['ClassID']).appendTo(currentSoldier.parents('.row').find('.class'));
+				$(currentSoldier.parents('.field-repeat.row').find('.rank')).empty();
+				$("<option />").text(rank['Rank']).val(rank['RankID']).appendTo(currentSoldier.parents('.field-repeat.row').find('.rank'));
+				$(currentSoldier.parents('.field-repeat.row').find('.class')).empty();
+				$("<option />").text(rank['Class']).val(rank['ClassID']).appendTo(currentSoldier.parents('.field-repeat.row').find('.class'));
 			}
 		});
 	});
