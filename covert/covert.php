@@ -9,12 +9,14 @@ $action = new CovertAction();
 $operativeFields = [];
 
 if(!empty($_POST)) {
+    echo "Pre Action Form Process<br />";
     $errorMsg = $action->processForm($_POST);
-
+    echo "Post Action Form Progress - Assign Action ID<br />";
     // Get the soldier ID
     $actionID = $action->id;
-
+    echo "Action ID: ".$actionID."<br />";
     // Get Soldier Skills and Submit
+    echo "Soldier Requirement in POST:<br />";
     print_r($_POST['requirement']);
     for( $i = 0; $i < sizeof($_POST['requirement']); $i++ ) {
         $operative = new CovertOperative;
