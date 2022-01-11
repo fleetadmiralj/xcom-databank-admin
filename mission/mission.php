@@ -33,7 +33,7 @@ if(!empty($_POST)) {
     $missionFields['difficulty'] = $missionData['difficulty'];
     $missionFields['chosen_result'] = $missionData['chosen_result'] ?? null;
     $missionFields['rating'] = $missionData['rating'];
-	$missionFields['status'] = $missionData['status'];
+	$missionFields['mission_status'] = $missionData['mission_status'];
     $missionFields['turns'] = $missionData['turns'] ?? 1;
     $missionFields['is_chain'] = $missionData['is_chain'];
     $missionFields['is_infiltration'] = $missionData['is_infiltration'];
