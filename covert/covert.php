@@ -28,6 +28,7 @@ if(!empty($_POST)) {
             $errorMsg .= $operative->processForm($operativeFields);
         }
     }
+    header('Location: /covert/covert-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
