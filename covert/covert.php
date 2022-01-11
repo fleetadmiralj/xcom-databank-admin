@@ -8,6 +8,8 @@ $action = new CovertAction();
 $operativeFields = [];
 
 if(!empty($_POST)) {
+    print_r($_POST);
+    echo '<br />';
     $errorMsg = $action->processForm($_POST);
 
     // Get the soldier ID
