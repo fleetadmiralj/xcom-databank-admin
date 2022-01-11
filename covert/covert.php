@@ -40,7 +40,7 @@ else {
     <body>
     <?php include_once __DIR__.'/../php/page-head.php' ?>
     <div id="main" class="controls input-group">
-        <h2 class="list-header">Add/Edit Covert Action this is the right file right?</h2>
+        <h2 class="list-header">Add/Edit Covert Action</h2>
         <?php
         if($errorMsg != "") {
             ?>
