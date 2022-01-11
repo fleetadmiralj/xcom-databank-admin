@@ -77,7 +77,7 @@ if(!empty($_POST)) {
         $soldierFields['mvp'] = $missionData['mvp'][$i];
         $soldierFields['status'] = $missionData['status'][$i];
         $soldierFields['extra'] = $missionData['extra'][$i];
-        if(isset($missionData['extra_info'][$i])) {
+        if(is_array($missionData['extra_info'])) {
             $soldierFields['extra_info'] = $missionData['extra_info'][$i];
         } else {
             $soldierFields['extra_info'] = null;
