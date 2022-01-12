@@ -20,10 +20,10 @@ if(!empty($_POST)) {
             $step = new ActivityChainStep();
             $chainFields['chain'] = $chainID;
             $chainFields['step'] = $_POST['step'][$i];
-            $chainFields['type'] = $_POST['type'][$i];
-            $chainFields['mission'] = $_POST['mission'][$i];
-            $chainFields['covert'] = $_POST['covert'][$i];
-            $chainFields['status'] = $_POST['status'][$i];
+            $chainFields['step_type'] = $_POST['step_type'][$i];
+            $chainFields['step_mission'] = $_POST['step_mission'][$i];
+            $chainFields['step_covert'] = $_POST['step_covert'][$i];
+            $chainFields['step_status'] = $_POST['step_status'][$i];
             $errorMsg .= $step->processForm($chainFields);
         }
     }
