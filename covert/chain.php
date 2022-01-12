@@ -33,6 +33,7 @@ else {
         $chainID = $_GET['id'];
         $chain->getActivityChain($chainID);
     }
+    header('Location: /covert/chain-list.php');
     ?>
 
     <!DOCTYPE html>
