@@ -21,8 +21,8 @@ if(!empty($_POST)) {
             $chainFields['chain'] = $chainID;
             $chainFields['step'] = $_POST['step'][$i];
             $chainFields['step_type'] = $_POST['step_type'][$i];
-            $chainFields['step_mission'] = $_POST['step_mission'][$i];
-            $chainFields['step_covert'] = $_POST['step_covert'][$i];
+            $chainFields['step_mission'] = $_POST['step_mission'][$i] ?? null;
+            $chainFields['step_covert'] = $_POST['step_covert'][$i] ?? null;
             $chainFields['step_status'] = $_POST['step_status'][$i];
             $errorMsg .= $step->processForm($chainFields);
         }
