@@ -27,13 +27,13 @@ if(!empty($_POST)) {
             $errorMsg .= $step->processForm($chainFields);
         }
     }
+    header('Location: /covert/chain-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
         $chainID = $_GET['id'];
         $chain->getActivityChain($chainID);
     }
-    header('Location: /covert/chain-list.php');
     ?>
 
     <!DOCTYPE html>
