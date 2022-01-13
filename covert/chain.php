@@ -19,6 +19,7 @@ if(!empty($_POST)) {
         for( $i = 0; $i < sizeof($_POST['step']); $i++ ) {
             $step = new ActivityChainStep();
             $chainFields['chain'] = $chainID;
+            $chainFields['step_id'] = $_POST['step_id'][$i];
             $chainFields['step'] = $_POST['step'][$i];
             $chainFields['step_type'] = $_POST['step_type'][$i];
             $chainFields['step_mission'] = $_POST['step_mission'][$i] ?? null;
