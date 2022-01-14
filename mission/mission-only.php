@@ -8,7 +8,15 @@ $mission = new Mission();
 $missionFields = [];
 
 if(!empty($_POST)) {
-    $errorMsg = $mission->processForm($_POST, '/mission/mission-list.php');
+    if(!empty($_FILES['picture']['name'])) {
+        $_POST['picture'] = $_FILES['picture'];
+    } else {
+        if(isset($_POST['picture_current'])) {
+            $_POST['picture'] = $_POST['picture_current'];
+        }
+    }
+    print_r($_POST);
+    //$errorMsg = $mission->processForm($_POST, '/mission/mission-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
