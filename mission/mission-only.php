@@ -15,8 +15,7 @@ if(!empty($_POST)) {
             $_POST['picture'] = $_POST['picture_current'];
         }
     }
-    print_r($_POST);
-    //$errorMsg = $mission->processForm($_POST, '/mission/mission-list.php');
+    $errorMsg = $mission->processForm($_POST, '/mission/mission-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
