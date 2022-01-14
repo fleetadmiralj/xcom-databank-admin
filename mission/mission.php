@@ -17,10 +17,7 @@ if(!empty($_POST)) {
     } else {
         if(isset($_POST['picture_current'])) {
             $_POST['picture'] = $_POST['picture_current'];
-        } else {
-            $_POST['picture'] = null;
         }
-
     }
     $missionData = $_POST;
 
