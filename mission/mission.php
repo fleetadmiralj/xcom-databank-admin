@@ -15,7 +15,12 @@ if(!empty($_POST)) {
     if(!empty($_FILES['picture']['name'])) {
         $_POST['picture'] = $_FILES['picture'];
     } else {
-        $_POST['picture'] = $_POST['picture_current'];
+        if(isset($_POST['picture_current'])) {
+            $_POST['picture'] = $_POST['picture_current'];
+        } else {
+            $_POST['picture'] = null;
+        }
+
     }
     $missionData = $_POST;
 
