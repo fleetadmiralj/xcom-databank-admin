@@ -31,7 +31,7 @@ else {
             <?php
         }
         ?>
-        <form action="mission.php" method="post" id="mission-form" enctype="multipart/form-data" class="was-validated" novalidate>
+        <form action="mission-only.php" method="post" id="mission-form" enctype="multipart/form-data" class="was-validated" novalidate>
             <div class="g-3 row">
                 <?php Mission::getMissionForm($mission); ?>
             </div>
