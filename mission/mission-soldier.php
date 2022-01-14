@@ -7,7 +7,7 @@ $errorMsg = "";
 $missionSoldier = new MissionSoldier;
 
 if(!empty($_POST)) {
-    $errorMsg = $missionSoldier->processForm($_POST, '/mission/objective-list.php');
+    $errorMsg = $missionSoldier->processForm($_POST, '/mission/mission-soldier-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
