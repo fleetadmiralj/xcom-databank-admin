@@ -44,7 +44,7 @@ $(function(){
 		} */
 		
 		//If Spark, disable will and psi fields - code or Psi field added for season 6
-		if(className === "Spark") {
+		if(className === "Spark" || className === "Spark: Artillery" || className === "Spark: Pioneer" || className === "Spark: Infiltrator") {
 			$('#will').val(null);
 			$('#psi').val(null);
 			$('#will').attr('disabled', 'disabled');
@@ -57,7 +57,7 @@ $(function(){
 			$('#psi').css("background-color", "");
 		}
 		
-		if(className === "Reaper" || className === "Skirmisher" || className === "Templar" || className === "Spark") {
+		if(className === "Reaper" || className === "Skirmisher" || className === "Templar" || className === "Spark" || className === "Spark: Artillery" || className === "Spark: Pioneer" || className === "Spark: Infiltrator") {
 			$('#country').val(null);
 			$('#country').attr('disabled', 'disabled');
 			$('#country').css("background-color", "");
