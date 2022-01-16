@@ -48,7 +48,7 @@ $(function(){
 			$('#will').val(null);
 			$('#psi').val(null);
 			$('#will').attr('disabled', 'disabled');
-			$('t#psi').attr('disabled', 'disabled');
+			$('#psi').attr('disabled', 'disabled');
 		}
 		else {
 			$('#will').removeAttr("disabled");
