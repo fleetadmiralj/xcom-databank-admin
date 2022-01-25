@@ -42,7 +42,6 @@ if(!empty($_POST)) {
     $missionFields['is_chain'] = $missionData['is_chain'];
     $missionFields['is_infiltration'] = $missionData['is_infiltration'];
     $missionFields['infiltration'] = $missionData['infiltration'] ?? null;
-    $missionFields['picture'] = $_FILES["picture"] ?? null;
     $missionFields['deleted'] = $missionData["deleted"] ?? null;
 
     $errorMsg = $mission->processForm($missionFields);
