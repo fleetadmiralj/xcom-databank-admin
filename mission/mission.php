@@ -42,6 +42,7 @@ if(!empty($_POST)) {
     $missionFields['is_chain'] = $missionData['is_chain'];
     $missionFields['is_infiltration'] = $missionData['is_infiltration'];
     $missionFields['infiltration'] = $missionData['infiltration'] ?? null;
+    $missionFields['picture'] = $missionData['picture'] ?? null;
     $missionFields['deleted'] = $missionData["deleted"] ?? null;
 
     $errorMsg = $mission->processForm($missionFields);
@@ -60,6 +61,7 @@ if(!empty($_POST)) {
     }
 
     // Collect and Submit Soldier Information
+    $j = 0; // variable for extra soldier info, since it's probably going to be on a different index
     for( $i = 0; $i < sizeof($missionData['soldier_id']); $i++ ) {
         $missionSoldier = new MissionSoldier();
 
@@ -80,8 +82,9 @@ if(!empty($_POST)) {
         $soldierFields['mvp'] = $missionData['mvp'][$i];
         $soldierFields['status'] = $missionData['status'][$i];
         $soldierFields['extra'] = $missionData['extra'][$i];
-        if(is_array($missionData['extra_info'])) {
-            $soldierFields['extra_info'] = $missionData['extra_info'][$i];
+        if($soldierFields['extra'] != "" and $soldierFields['extra'] != 6) {
+            $soldierFields['extra_info'] = $missionData['extra_info'][$j];
+            $j++;
         } else {
             $soldierFields['extra_info'] = null;
         }
