@@ -83,6 +83,7 @@ if(!empty($_POST)) {
         $soldierFields['status'] = $missionData['status'][$i];
         $soldierFields['extra'] = $missionData['extra'][$i];
         if($soldierFields['extra'] != "" and $soldierFields['extra'] != 6) {
+            print_r($missionData['extra_info']);
             if(is_array($missionData['extra_info'])) {
                 $soldierFields['extra_info'] = $missionData['extra_info'][$j];
                 $j++;
