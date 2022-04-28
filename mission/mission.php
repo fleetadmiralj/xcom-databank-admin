@@ -82,7 +82,8 @@ if(!empty($_POST)) {
         $soldierFields['mvp'] = $missionData['mvp'][$i];
         $soldierFields['status'] = $missionData['status'][$i];
         $soldierFields['extra'] = $missionData['extra'][$i];
-        if($soldierFields['extra'] != "" and $soldierFields['extra'] != 6) {
+        $soldierFields['extra_info'] = $missionData['extra_info'][$i];
+        /*if($soldierFields['extra'] != "" and $soldierFields['extra'] != 6) {
             if(is_array($missionData['extra_info'])) {
                 $soldierFields['extra_info'] = $missionData['extra_info'][$j];
                 $j++;
@@ -91,7 +92,7 @@ if(!empty($_POST)) {
             }
         } else {
             $soldierFields['extra_info'] = null;
-        }
+        } */
         $soldierFields['promoted'] = $missionData['promoted'][$i];
         if(isset($missionData['MSid'][$i])) {
             $soldierFields['id'] = $missionData['MSid'][$i];
