@@ -111,6 +111,10 @@ div.admin-table div.row {
 	border-top: 0;
 }
 
+div.mission-soldier-list div.row div.row {
+	border: 0;
+}
+
 div.admin-table div.row.head-row {
 	font-size: 1.2em;
 	border: 0;
