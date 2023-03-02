@@ -5,22 +5,16 @@ include_once __DIR__.'/../../project/adminInclude.php';
 
 $errorMsg = "";
 $mission = new Mission();
-$missionFields = [];
 
 if(!empty($_POST)) {
     if(!empty($_FILES['picture']['name'])) {
-        echo "File Dump:";
-        print_r($_FILES);
-        echo "\n";
         $_POST['picture'] = $_FILES['picture'];
     } else {
-        if(isset($_POST['picture_current'])) {
-            echo "POST Dump:";
-            print_r($_POST);
-            $_POST['picture'] = $_POST['picture_current'];
-        }
+        $_POST['picture'] = $_POST['picture_current'];
     }
-    //$errorMsg = $mission->processForm($_POST, '/mission/mission-list.php');
+    $missionData = $_POST;
+    print_r($_POST);
+    $errorMsg = $mission->processForm($missionData, '/mission/mission-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
