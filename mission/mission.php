@@ -76,6 +76,7 @@ if(!empty($_POST)) {
         $soldierFields['other_hit'] = $missionData['other_hit'][$i];
         $soldierFields['other_taken'] = $missionData['other_taken'][$i];
         $soldierFields['damage'] = $missionData['damage'][$i];
+        $soldierFields['eas'] = $missionData['eas'][$i];
         $soldierFields['healing'] = $missionData['healing'][$i];
         $soldierFields['killed_aliens'] = $missionData['killed_aliens'][$i];
         $soldierFields['killed_lost'] = $missionData['killed_lost'][$i];
