@@ -9,18 +9,23 @@ $missionFields = [];
 
 if(!empty($_POST)) {
     if(!empty($_FILES['picture']['name'])) {
+        echo "File Dump:";
+        print_r($_FILES);
+        echo "\n";
         $_POST['picture'] = $_FILES['picture'];
     } else {
         if(isset($_POST['picture_current'])) {
+            echo "POST Dump:";
+            print_r($_POST);
             $_POST['picture'] = $_POST['picture_current'];
         }
     }
-    $errorMsg = $mission->processForm($_POST, '/mission/mission-list.php');
+    //$errorMsg = $mission->processForm($_POST, '/mission/mission-list.php');
 }
 else {
     if(isset($_GET['id']) and is_numeric($_GET['id'])) {
         $missionID = intval($_GET['id']);
-        $mission->getMission($missionID);
+       //$mission->getMission($missionID);
     }
     ?>
 
