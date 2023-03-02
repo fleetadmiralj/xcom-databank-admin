@@ -13,7 +13,6 @@ if(!empty($_POST)) {
         $_POST['picture'] = $_POST['picture_current'];
     }
     $missionData = $_POST;
-    print_r($_POST);
     $errorMsg = $mission->processForm($missionData, '/mission/mission-list.php');
 }
 else {
